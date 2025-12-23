@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Addiction Killer – Nasha Mukti Ayurveda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Addiction Killer – Ayurvedic support for alcohol, cigarette, tobacco and other addictions. Free phone counselling and home delivery." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fb;
+      color: #111827;
+      line-height: 1.6;
+    }
+    img { height: auto; display: block; }
+    a { text-decoration: none; }
+
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+      min-height: 100vh;
+    }
+
+    /* Top bar */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #0b5a2d;
+      color: #fff;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .top-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+    .top-left img.logo {
+      height: 32px;
+      width: auto;
+    }
+    .top-right {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .btn-top {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.7);
+      color: #0b5a2d;
+      background: #fff;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Sections */
+    .section {
+      padding: 24px 16px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .section:nth-child(even) { background: #f9fafb; }
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #0b5a2d;
+    }
+    .section-sub { font-size: 16px; margin-bottom: 16px; color:#111827; }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-left, .hero-right { flex: 1 1 280px; min-width: 260px; }
+    .hero-title { font-size: 28px; font-weight: 900; color: #0b5a2d; margin-bottom: 10px; }
+    .hero-subtitle { font-size: 17px; margin-bottom: 14px; color:#111827; }
+    .hero-bullets { list-style: none; margin-bottom: 16px; font-size: 15px; }
+    .hero-bullets li::before { content: "✔"; color: #15803d; margin-right: 6px; }
+
+    /* ✅ Only 2 buttons side-by-side */
+    .hero-cta-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: nowrap;
+    }
+    .hero-cta-row a { flex: 1 1 50%; }
+    .hero-cta-row .btn-main { width: 100%; }
+
+    .btn-main {
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-call { background: #ee5c07; color: #fff; }
+    .btn-wa { background: #16a34a; color: #fff; }
+    .hero-note { font-size: 13px; color: #4b5563; }
+
+    .hero-right img { max-width: 360px; width: 100%; margin: 0 auto; border-radius:12px; }
+
+    /* Lead card */
+    .lead-card {
+      background: #ecfdf3;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid #bbf7d0;
+      margin-top: 20px;
+    }
+    .lead-card h3 { font-size: 18px; margin-bottom: 8px; color: #166534; font-weight:800; }
+    .lead-card p { font-size: 13px; color: #374151; margin-bottom: 10px; }
+    .form-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+    .form-group { flex: 1 1 130px; min-width: 130px; display: flex; flex-direction: column; }
+    .form-group label { font-size: 13px; margin-bottom: 3px; }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
+      border-color:#16a34a;
+      box-shadow: 0 0 0 3px rgba(22,163,74,0.15);
+    }
+    .lead-submit { margin-top: 8px; width: 100%; }
+
+    /* Grid cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 12px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+      font-size: 14px;
+    }
+    .card strong { display: block; margin-bottom: 4px; color: #0f172a; }
+
+    .highlight-tag {
+      display: inline-block;
+      padding: 3px 8px;
+      font-size: 12px;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #92400e;
+      margin-bottom: 6px;
+      font-weight:800;
+    }
+    .trust-logos { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 13px; }
+    .badge-pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #fff;
+      font-weight:600;
+    }
+
+    /* Product images */
+    #product img { max-width: 220px; width: 100%; margin: 0 auto 10px; }
+
+    /* ✅ Offer (flashy premium) */
+    .price-box{
+      background: linear-gradient(135deg, #fff7cc, #fff1b3);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid #f59e0b;
+      box-shadow: 0 12px 30px rgba(245,158,11,0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .price-box::before{
+      content:"";
+      position:absolute;
+      top:-60px;
+      right:-60px;
+      width:180px;
+      height:180px;
+      background: radial-gradient(circle, rgba(255,255,255,0.85), rgba(255,255,255,0));
+      transform: rotate(20deg);
+    }
+    .offer-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      font-weight:800;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      margin: 10px 0 10px;
+    }
+    .price-line{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin: 6px 0 6px;
+    }
+    .old-price{
+      color:#6b7280;
+      text-decoration: line-through;
+      font-size:18px;
+      font-weight:800;
+    }
+    .new-price{
+      color:#111827;
+      font-size:32px;
+      font-weight:900;
+      letter-spacing:0.2px;
+    }
+    .save-badge{
+      background: linear-gradient(90deg, #ff6a3d, #ff3d3d);
+      color:#fff;
+      font-size:13px;
+      font-weight:900;
+      padding:7px 12px;
+      border-radius:8px;
+      box-shadow: 0 8px 18px rgba(255,61,61,0.25);
+    }
+    .offer-highlights{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .offer-chip{
+      background:#ffffff;
+      border:1px solid #fde68a;
+      color:#92400e;
+      font-weight:800;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    .faq-item { margin-bottom: 10px; font-size: 14px; }
+    .faq-item strong { display: block; color: #111827; }
+
+    .footer { font-size: 12px; color: #6b7280; padding-top: 10px; }
+
+    /* Problem section slider */
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 12px;
+    }
+    .problem-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+      font-size: 14px;
+    }
+    .problem-card h3 { font-size: 16px; font-weight: 800; margin: 8px 0 6px; color: #0f172a; }
+    .problem-card p { font-size: 14px; color: #374151; }
+    .problem-img {
+      width: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 767px) {
+      .problem-cards {
+        display: flex;
+        overflow-x: auto;
+        gap: 12px;
+        padding-bottom: 12px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .problem-card { min-width: 80%; scroll-snap-align: start; }
+      .problem-cards::-webkit-scrollbar { height: 6px; }
+      .problem-cards::-webkit-scrollbar-track { background: #e5e7eb; border-radius: 999px; }
+      .problem-cards::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 999px; }
+    }
+
+    /* ✅ Testimonial Slider (pure CSS swipe) */
+    .testi-wrap{ margin-top: 16px; }
+    .testi-slider{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 10px 4px 14px;
+    }
+    .testi-slider::-webkit-scrollbar{ height: 6px; }
+    .testi-slider::-webkit-scrollbar-thumb{ background:#cbd5e1; border-radius:999px; }
+    .testi-card{
+      flex: 0 0 85%;
+      scroll-snap-align: start;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 14px 40px rgba(2, 6, 23, 0.08);
+      border: 1px solid #e5e7eb;
+      position: relative;
+      overflow:hidden;
+    }
+    .testi-card::before{
+      content:"";
+      position:absolute;
+      top:-50px;
+      right:-60px;
+      width:160px;
+      height:160px;
+      background: radial-gradient(circle, rgba(16,185,129,0.18), rgba(16,185,129,0));
+    }
+    .testi-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .testi-img{
+      width: 96px;
+      height: 96px;
+      border-radius:50%;
+      object-fit:cover;
+      border: 3px solid #d1fae5;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+      flex:0 0 auto;
+    }
+    .testi-title{
+      font-size: 15px;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+    .testi-meta{
+      font-size: 12px;
+      color: #6b7280;
+      font-weight: 800;
+    }
+    .testi-text{
+      font-size: 14px;
+      color: #111827;
+      line-height: 1.65;
+    }
+    .testi-quote{
+      font-size: 30px;
+      font-weight: 900;
+      color: rgba(11,90,45,0.22);
+      position:absolute;
+      left: 14px;
+      bottom: 6px;
+    }
+    @media (max-width: 767px){
+      .testi-card{ flex: 0 0 90%; }
+      .testi-img{ width: 104px; height: 104px; }
+    }
+
+    .video-box{
+      width:100%;
+      max-width: 520px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 14px 40px rgba(2, 6, 23, 0.10);
+      background: #000;
+      aspect-ratio: 16 / 9;
+    }
+    .video-box iframe{
+      width: 100%;
+      height: 100%;
+      display:block;
+    }
+
+    /* ===== Premium Product Section ===== */
+    .product-premium{
+      display:grid;
+      grid-template-columns: 420px 1fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 12px;
+    }
+
+    .product-visual{
+      background: linear-gradient(135deg, #ecfdf3, #ffffff);
+      border: 1px solid #bbf7d0;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 14px 40px rgba(2, 6, 23, 0.07);
+      position: relative;
+      overflow: hidden;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .product-visual::before{
+      content:"";
+      position:absolute;
+      top:-70px;
+      left:-70px;
+      width:220px;
+      height:220px;
+      background: radial-gradient(circle, rgba(22,163,74,0.22), rgba(22,163,74,0));
+    }
+
+    .product-badge{
+      position:absolute;
+      top: 12px;
+      right: 12px;
+      background:#111827;
+      color:#fff;
+      font-weight:900;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    .product-img{
+      width: 100%;
+      max-width: 340px;
+      margin: 22px auto 10px;
+      border-radius: 14px;
+      filter: drop-shadow(0 18px 26px rgba(0,0,0,0.12));
+    }
+
+    .product-note{
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background:#ffffff;
+      border:1px solid #e5e7eb;
+      font-size:13px;
+      font-weight:700;
+      color:#0f172a;
+      text-align:center;
+    }
+
+    .product-info{
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 14px 40px rgba(2, 6, 23, 0.06);
+    }
+
+    .benefit-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .benefit-card{
+      display:flex;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+    }
+
+    .benefit-icon{
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: #ecfdf3;
+      border: 1px solid #bbf7d0;
+      font-size: 20px;
+      flex: 0 0 auto;
+    }
+
+    .benefit-title{
+      font-weight: 900;
+      font-size: 15px;
+      color:#0f172a;
+      margin-bottom: 2px;
+    }
+
+    .benefit-text{
+      font-size: 14px;
+      color:#374151;
+      line-height: 1.55;
+    }
+
+    /* responsive */
+    @media (max-width: 900px){
+      .product-premium{
+        grid-template-columns: 1fr;
+      }
+      .product-img{
+        max-width: 320px;
+      }
+    }
+
+
+    /* Floating WhatsApp button bottom-right */
+    .floating-wa {
+      position: fixed;
+      right: 16px;
+      bottom: 72px; /* mobile: above sticky bar */
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #16a34a;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 30px;
+      z-index: 1000;
+    }
+
+    /* Sticky bottom bar (mobile) */
+    .sticky-bottom {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0b5a2d;
+      padding: 8px 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      z-index: 900;
+    }
+    .sticky-bottom a { flex: 1; }
+    .sticky-bottom .btn-main { width: 100%; font-size: 14px; padding: 8px 10px; }
+
+    @media (min-width: 768px) {
+      .hero-title { font-size: 34px; }
+      .hero-subtitle { font-size: 18px; }
+
+      .sticky-bottom { display: none; }
+      .floating-wa { right: 24px; bottom: 24px; }
+    }
+    /* ===== Smooth Animations (lightweight) ===== */
+    .reveal{
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* slightly different directions (optional) */
+    .reveal-left{ transform: translateX(-16px); }
+    .reveal-right{ transform: translateX(16px); }
+    .reveal-left.is-visible,
+    .reveal-right.is-visible{ transform: translateX(0); }
+
+   /* hover lift for cards */
+    .card, .problem-card, .testi-card, .benefit-card, .price-box, .lead-card, .product-visual, .product-info{
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover, .problem-card:hover, .testi-card:hover, .benefit-card:hover, .price-box:hover, .lead-card:hover,
+    .product-visual:hover, .product-info:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 18px 50px rgba(2, 6, 23, 0.12);
+    }
+
+    /* CTA buttons subtle pulse */
+    @keyframes softPulse{
+     0%{ transform: translateY(0); }
+      50%{ transform: translateY(-2px); }
+      100%{ transform: translateY(0); }
+    }
+    .btn-call{ animation: softPulse 2.2s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce){
+      .btn-call{ animation: none; }
+      .reveal{ transition: none; transform: none; opacity: 1; }
+    }
+
+    /* Save badge pop */
+    @keyframes badgePop{
+       0%, 100%{ transform: scale(1); }
+      50%{ transform: scale(1.04); }
+    }
+    .save-badge{ animation: badgePop 1.8s ease-in-out infinite; }
+
+  </style>
+</head>
+
+<body>
+  <div class="page-wrap">
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="top-left">
+        <img src="images/sat-kartar-logo.png" alt="Sat Kartar Logo" class="logo">
+        <div>
+          <div style="font-size:14px;font-weight:800;">Sat Kartar – Nasha Mukti Mission</div>
+          <div style="font-size:12px;opacity:0.95;">Parivaar ko nasha mukt aur khushhaal banane ka sankalp</div>
+        </div>
+      </div>
+      <div class="top-right">
+        <a href="tel:+917428382862" class="btn-top">📞 Call: 74283 82862</a>
+        <a href="https://wa.me/917428382862" class="btn-top">💬 WhatsApp</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="section" id="top">
+      <div class="hero">
+        <div class="hero-left">
+          <h1 class="hero-title">Nasha Chhodo, Parivaar Bachao</h1>
+          <p class="hero-subtitle">
+            <strong>Addiction Killer</strong> – 100% Ayurvedic support sharab, cigarette, tambaaku jaise nashon se chutkaara pane mein sahayak.
+            Guru kripa + Ayurveda ke saath ek naya jeevan shuru karein.
+          </p>
+          <ul class="hero-bullets">
+            <li>Sharab, cigarette, gutkha ki aadat chhodne mein sahayak</li>
+            <li>100% Ayurvedic, chemical free formula</li>
+            <li>Doctor se phone par salaah, ghar baithay delivery</li>
+          </ul>
+
+          <!-- ✅ Only 2 buttons (no WhatsApp here) -->
+          <div class="hero-cta-row">
+            <a href="tel:+917428382862">
+              <button class="btn-main btn-call">📞 Abhi Call Karein</button>
+            </a>
+            <a href="#lead-form">
+              <button class="btn-main" style="background:#0369a1;color:#fff;">📋 Mera Call Back Karein</button>
+            </a>
+          </div>
+
+          <div class="hero-note">
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <img src="images/addiction-killer-aniruddhacharya-addiction-mukti-satkartar.jpg"
+               alt="Addiction Killer Ayurvedic powder with Aniruddhacharya Ji promoting addiction free life">
+          <div style="margin-top:8px;font-size:12px;color:#4b5563;text-align:center;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini form -->
+      <div class="lead-card">
+        <h3>Free Call Back – Nasha chhodne ka pehla kadam</h3>
+        <p>Form bharen, hamara counselor aapse baat karke aapko sahi salah aur dosage batayega.</p>
+        <form id="mini-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mini-name">Naam*</label>
+              <input id="mini-name" name="name" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="mini-mobile">Mobile Number*</label>
+              <input id="mini-mobile" name="mobile" type="tel"
+                     required minlength="10" maxlength="10"
+                     pattern="[0-9]{10}"
+                     oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mini-state">Rajya / Shehar</label>
+              <input id="mini-state" name="state" type="text" placeholder="Jaise: UP, Delhi">
+            </div>
+            <div class="form-group">
+              <label for="mini-addiction">Kis nasha se pareshan?*</label>
+              <select id="mini-addiction" name="addiction" required>
+                <option value="">Chunein</option>
+                <option value="Sharab">Sharab</option>
+                <option value="Cigarette">Cigarette</option>
+                <option value="Tambaaku / Gutkha">Tambaaku / Gutkha</option>
+                <option value="Multi addiction">Ek se zyada nasha</option>
+                <option value="Dusra">Koi aur</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-main btn-call lead-submit">📞 Mera Call Back Karein</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section" id="problem">
+      <h2 class="section-title">Nasha sirf aadmi ko nahi, poore ghar ko dard deta hai</h2>
+      <p class="section-sub">
+        Sharab, cigarette, gutkha, powder – ye sab dheere dheere badan, mann aur paisa teenon ko kha jaate hain.
+        Sabse zyada dard hota hai <strong>parivaar ko</strong>.
+      </p>
+
+      <div class="problem-cards">
+        <div class="problem-card">
+          <img src="images/problem-rona-tanav.jpg" alt="Parivaar mein jhagda aur rona dhona" class="problem-img">
+          <h3>Rona aur tanav</h3>
+          <p>Raat ko deri se sharab pi kar aana, jhagda, gussa – bachche dara hua mehsoos karte hain.</p>
+        </div>
+
+        <div class="problem-card">
+          <img src="images/problem-sehat-kharab.jpg" alt="Sehat kharab" class="problem-img">
+          <h3>Sehat dheere dheere toot ti hai</h3>
+          <p>Khansi, kamjori, pet ki problem, liver par asar – nasha sharir ka dushman ban jaata hai.</p>
+        </div>
+
+        <div class="problem-card">
+          <img src="images/problem-paise-nuksan.jpg" alt="Paise ka nuksaan" class="problem-img">
+          <h3>Paise ka nuksaan</h3>
+          <p>Rozana nasha, mahine ka bada kharcha. Yehi paise parivaar ki padhai aur bhavishya mein lag sakte hain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acharya message -->
+    <section class="section" id="message">
+      <div class="hero">
+        <div class="hero-left">
+          <span class="highlight-tag">Guru Margdarshan</span>
+          <h2 class="section-title">Sankalp ke bina nasha chhodna mushkil hai</h2>
+          <p class="section-sub">
+            Santon, acharyon aur guruon ka sandesh saaf hota hai –
+            <strong>“Nasha chhodo, dhyaan aur seva mein jeevan lagao.”</strong><br><br>
+            Aap khud sankalp lein, aur <strong>Addiction Killer</strong> jaise Ayurvedic sahayak ke saath
+            apni journey easy bana sakte hain.
+          </p>
+          <p style="font-size:14px;color:#374151;margin-bottom:10px;">
+            Aaj hi dil se nirnay lein: <strong>“Main nasha chhodunga / chhodungi – apne parivaar ke liye.”</strong>
+          </p>
+          <a href="#lead-form"><button class="btn-main btn-wa">🙏 Mera Sankalp Register Karein</button></a>
+        </div>
+        <div class="hero-right">
+        <div class="video-box">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/iMJ4CWrdD-g?rel=0&modestbranding=1&playsinline=1"
+            title="Addiction Free Message"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product -->
+    <section class="section" id="product">
+      <h2 class="section-title">Addiction Killer – Ayurveda ka sahayak formula</h2>
+      <p class="section-sub">
+        Ye ek <strong>Ayurvedic Proprietary Medicine</strong> hai jo nasha chhodne ki prakriya ko support kar sakti hai.
+        Kripya ise ek support system ki tarah samjhein – aapka asli bal aapka sankalp hai.
+      </p>
+
+      <div class="product-premium">
+        <!-- Left: Product -->
+        <div class="product-visual">
+          <div class="product-badge">⭐ Best Seller</div>
+          <img
+            src="images/addiction-killer-ayurvedic-medicine-box-satkartar.png"
+            alt="Sat Kartar Addiction Killer 3 bottle pack"
+            class="product-img"
+          />
+          <div class="product-note">
+            ✅ COD Available • ✅ India-wide Delivery • ✅ Privacy Safe
+          </div>
+        </div>
+
+        <!-- Right: Benefits -->
+        <div class="product-info">
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🧠</div>
+              <div>
+                <div class="benefit-title">Cravings mein sahayak</div>
+                <div class="benefit-text">Nasha chhodte waqt zor ki ichchha ko control karne mein support.</div>
+              </div>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">🫀</div>
+              <div>
+                <div class="benefit-title">Sharir ko support</div>
+                <div class="benefit-text">Pachan aur liver care ke through body ko support milta hai.</div>
+              </div>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-icon">🌿</div>
+              <div>
+                <div class="benefit-title">Mann ko shaant rakhne mein sahayak</div>
+                <div class="benefit-text">Chidhchidhapan aur tension ko kam karne mein support.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trust-logos" style="margin-top:14px;">
+            <span class="badge-pill">✅ 100% Ayurvedic</span>
+            <span class="badge-pill">✅ GMP Certified</span>
+            <span class="badge-pill">✅ No Alcohol</span>
+            <span class="badge-pill">✅ India-wide Delivery</span>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="#offer" style="flex:1 1 180px;">
+              <button class="btn-main btn-wa" style="width:100%;">🔥 Offer Dekhein</button>
+            </a>
+            <a href="#lead-form" style="flex:1 1 180px;">
+              <button class="btn-main btn-call" style="width:100%;">📞 Call Back Mangey</button>
+            </a>
+          </div>
+    
+          <div style="font-size:12px;color:#6b7280;margin-top:10px;">
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <h2 class="section-title">Kaise kaam karega? – Sirf 3 simple steps</h2>
+      <div class="grid-3">
+        <div class="card"><strong>Step 1 – Hamse juriye</strong> Call/WhatsApp ya form bhar dein.</div>
+        <div class="card"><strong>Step 2 – Free counseling</strong> Team aapki problem samajh kar guidance degi.</div>
+        <div class="card"><strong>Step 3 – Ghar tak delivery</strong> Product aapke ghar courier ho jayega.</div>
+      </div>
+      <div style="margin-top:14px;">
+        <a href="#lead-form"><button class="btn-main btn-call">📞 Abhi Pehla Step Lijiye – Call Back Mangey</button></a>
+      </div>
+    </section>
+
+    <!-- ✅ Testimonials (Premium Slider + big images) -->
+    <section class="section" id="trust">
+      <h2 class="section-title">Logon ke anubhav – Parivaar mein phir se muskaan</h2>
+      <p class="section-sub">
+        Har vyakti ka anubhav alag hota hai, lekin kuch parivaaron ki kahaniyan aapko umeed de sakti hain.
+      </p>
+
+      <div class="testi-wrap">
+        <div class="testi-slider" id="testiSlider">
+
+          <div class="testi-card">
+            <div class="testi-head">
+              <img class="testi-img" src="images/testimonial-ramesh.jpg" alt="Ramesh ji testimonial photo">
+              <div>
+                <div class="testi-title">“20 saal ka nasha, 3 mahine se bilkul band”</div>
+                <div class="testi-meta">Ramesh ji • UP</div>
+              </div>
+            </div>
+            <div class="testi-text">
+              “Main roz sharab peeta tha. Diabetes bhi thi. Doctor ne nasha chhodne ko bola par mushkil tha.
+              Addiction Killer course aur parivaar ki support se 3 mahine se ek boond nahi li.”
+            </div>
+            <div class="testi-quote">❝</div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-head">
+              <img class="testi-img" src="images/testimonial-sandeep.jpg" alt="Sandeep testimonial photo">
+              <div>
+                <div class="testi-title">“Cigarette se chutkaara, saans mein aaraam”</div>
+                <div class="testi-meta">Sandeep • Delhi</div>
+              </div>
+            </div>
+            <div class="testi-text">
+              “Din bhar 1 pack cigarette finish. Khansi ruk nahi rahi thi. Course start karne ke 4 hafte baad
+              cigarette se mann hatne laga.”
+            </div>
+            <div class="testi-quote">❝</div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-head">
+              <img class="testi-img" src="images/testimonial-neha.jpg" alt="Neha ji testimonial photo">
+              <div>
+                <div class="testi-title">“Ghar ka mahaul badal gaya”</div>
+                <div class="testi-meta">Neha ji • Rajasthan</div>
+              </div>
+            </div>
+            <div class="testi-text">
+              “Mere pati sharab ki wajah se roz jhagda karte the. Aaj 2 mahine se sharab nahi li, bachche bhi khush.”
+            </div>
+            <div class="testi-quote">❝</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="trust-logos" style="margin-top:16px;">
+        <span class="badge-pill">10,000+ parivaar jud chuke*</span>
+        <span class="badge-pill">Doctor & Ayurvedic guidance</span>
+        <span class="badge-pill">Secrecy aur privacy ka dhyan</span>
+      </div>
+      <p style="font-size:11px;color:#6b7280;margin-top:6px;">
+      </p>
+    </section>
+
+    <!-- Offer -->
+    <section class="section" id="offer">
+      <h2 class="section-title">Course Details & Special Offer</h2>
+
+      <div class="price-box">
+        <div><strong>Course:</strong> 3 Bottle Pack – 60 gm powder har bottle</div>
+        <div class="offer-pill">⏳ Limited Time Offer • COD Available</div>
+
+        <div class="price-line">
+          <span class="old-price">₹3359</span>
+          <span class="new-price">₹2799</span>
+          <span class="save-badge">Save ₹560</span>
+        </div>
+
+        <div style="margin-top:6px;font-weight:700;">Cash on Delivery | India bhar mein delivery upalabdh</div>
+
+        <div class="offer-highlights">
+          <span class="offer-chip">🚚 Free Delivery*</span>
+          <span class="offer-chip">🔒 Privacy Safe</span>
+          <span class="offer-chip">📞 Free Counseling</span>
+        </div>
+
+        <div style="font-size:12px;margin-top:10px;color:#6b7280;">
+        </div>
+
+        <div style="margin-top:12px;">
+          <a href="#lead-form">
+            <button class="btn-main btn-call">📞 Meri Booking Karein – Call Back</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Form -->
+    <section class="section" id="lead-form">
+      <h2 class="section-title">Form bharen – Ham aapko call karenge</h2>
+      <p class="section-sub">
+        Apna number sahi likhein. Aapka data surakshit hai, sirf counseling aur order ke liye use kiya jayega.
+      </p>
+
+      <div class="lead-card">
+        <form id="main-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Pura Naam*</label>
+              <input id="name" name="name" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile Number*</label>
+              <input id="mobile" name="mobile" type="tel"
+                     required minlength="10" maxlength="10"
+                     pattern="[0-9]{10}"
+                     oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+            </div>
+            <div class="form-group">
+              <label for="altmobile">Alternate Number (optional)</label>
+              <input id="altmobile" name="altmobile" type="tel">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="state">Rajya*</label>
+              <input id="state" name="state" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="city">Shehar / Gaon*</label>
+              <input id="city" name="city" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="time">Prefer kiya gaya call time</label>
+              <select id="time" name="time">
+                <option value="">Koi bhi</option>
+                <option value="Morning">Subah (9–12)</option>
+                <option value="Afternoon">Dopehar (12–5)</option>
+                <option value="Evening">Shaam (5–9)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex:1 1 100%;">
+              <label>Kis-kis nasha se pareshan?*</label>
+              <div style="font-size:13px;display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;">
+                <label><input type="checkbox" name="addictions" value="Sharab"> Sharab</label>
+                <label><input type="checkbox" name="addictions" value="Cigarette"> Cigarette</label>
+                <label><input type="checkbox" name="addictions" value="Tambaaku / Gutkha"> Tambaaku / Gutkha</label>
+                <label><input type="checkbox" name="addictions" value="Ganja / Powder"> Ganja / Powder</label>
+                <label><input type="checkbox" name="addictions" value="Dusra"> Dusra</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex:1 1 100%;">
+              <label for="message">Thoda sa apni problem likhein (optional)</label>
+              <textarea id="message" name="message" rows="3"
+                        placeholder="Kitne saal se nasha, kitni matra, koi bimaari ho to likhein"></textarea>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex:1 1 100%;font-size:12px;">
+              <label>
+                <input type="checkbox" id="agree" required>
+                Main yeh maan kar form bhar raha/rahi hoon ki main nasha chhodna chahta/chahti hoon aur phone par salaah lena chahta/chahti hoon.
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-main btn-wa lead-submit">✅ Mera Call Back Arrange Karein</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <h2 class="section-title">Aksar puchhe jaane wale sawaal</h2>
+      <div class="faq-item">
+        <strong>1. Kya Addiction Killer allopathy dawa ka replacement hai?</strong>
+        Nahi. Ye ek Ayurvedic support formula hai. Agar aap kisi doctor ki dawa le rahe hain to bina salah ke kabhi band na karein.
+      </div>
+      <div class="faq-item">
+        <strong>2. Kya isse side effect ho sakta hai?</strong>
+        Formula Ayurvedic hai, phir bhi agar aapko koi gambhir bimaari, allergy, pregnancy ya doosri problem hai
+        to apne doctor se salah jaroor karein.
+      </div>
+      <div class="faq-item">
+        <strong>3. Kitne time tak lena hoga?</strong>
+        Ye vyakti ki aadat, umar, health par depend karta hai. Hamari team call par aapko best course duration batayegi.
+      </div>
+      <div class="faq-item">
+        <strong>4. Kya family ke kisi member ke bina order ho sakta hai?</strong>
+        Haan, bahut si maayein, patniyan aur behne apne parivaar ke purushon ke liye form bhar rahi hain.
+        Ham unse pyar aur respect se baat karte hain.
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="section">
+      <div class="footer">
+        <strong>Important Disclaimer:</strong> Addiction Killer ek Ayurvedic support product hai.
+        Yeh kisi bhi roop mein emergency medical treatment ya doctor ki salah ka replacement nahi hai.
+        Result vyakti dar vyakti alag ho sakta hai. Kisi bhi nayi medicine ya supplement shuru karne se pehle
+        apne registered health professional se salah lena hamesha behtar hai.
+        <br><br>
+        © Sat Kartar. All Rights Reserved.
+      </div>
+    </section>
+
+  </div>
+
+  <!-- JS: 10-digit validation + dummy submit -->
+  <script>
+    function validateMobileById(id) {
+      const el = document.getElementById(id);
+      if (!el) return true;
+      const v = (el.value || "").trim();
+      if (!/^[0-9]{10}$/.test(v)) {
+        alert("Kripya sahi 10 digit mobile number daalein.");
+        return false;
+      }
+      return true;
+    }
+
+    document.getElementById('mini-form').addEventListener('submit', function(e) {
+      if (!validateMobileById('mini-mobile')) { e.preventDefault(); return; }
+      e.preventDefault();
+      alert('Dhanyavaad! Hamari team aapko jald hi call karegi.');
+    });
+
+    document.getElementById('main-form').addEventListener('submit', function(e) {
+      if (!validateMobileById('mobile')) { e.preventDefault(); return; }
+      e.preventDefault();
+      alert('Dhanyavaad! Aapka form submit ho gaya. Ham jaldi hi aapko call karenge.');
+    });
+  </script>
+
+  <!-- Floating WhatsApp button bottom-right -->
+  <a href="https://wa.me/917428382862?text=Namaste,%20mujhe%20nasha%20mukti%20ke%20baare%20mein%20baat%20karni%20hai."
+     class="floating-wa"
+     aria-label="WhatsApp par baat karein"
+     target="_blank"
+     rel="noopener">💬</a>
+
+  <!-- Sticky bottom bar (mobile only) -->
+  <div class="sticky-bottom">
+    <a href="tel:+917428382862"><button class="btn-main btn-call">📞 Call Karein</button></a>
+    <a href="#lead-form"><button class="btn-main btn-wa">📋 Form Bharen</button></a>
+  </div>
+  <script>
+  // Reveal on scroll using IntersectionObserver
+  (function(){
+    const els = document.querySelectorAll('.section, .card, .problem-card, .testi-card, .benefit-card, .price-box, .lead-card, .product-visual, .product-info');
+    els.forEach((el, i) => {
+      el.classList.add('reveal');
+      // small stagger
+      el.style.transitionDelay = Math.min(i * 0.03, 0.25) + 's';
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    els.forEach(el => io.observe(el));
+  })();
+</script>
+
+</body>
+</html>
