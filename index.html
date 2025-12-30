@@ -106,9 +106,7 @@
     .btn-small{padding:10px 14px; font-size:14px}
 
     /* Hero */
-    .hero{
-      padding:44px 0 28px;
-    }
+    .hero{ padding:44px 0 28px; }
     .hero-grid{
       display:grid;
       grid-template-columns: 1.1fr .9fr;
@@ -128,11 +126,7 @@
       font-size:16px;
       max-width: 58ch;
     }
-    .ticks{
-      margin:14px 0 18px;
-      display:grid;
-      gap:10px;
-    }
+    .ticks{ margin:14px 0 18px; display:grid; gap:10px; }
     .tick{
       display:flex; gap:10px; align-items:flex-start;
       background:#fff;
@@ -159,7 +153,6 @@
       flex-wrap:wrap;
       margin-top:10px;
     }
-    /* WhatsApp button under Abhi call removed; now 2 buttons side-by-side */
     .hero-ctas .btn{min-width: 220px}
     .hero-ctas .btn-row{
       display:flex; gap:12px; flex-wrap:wrap;
@@ -167,10 +160,8 @@
     }
     .hero-ctas .btn-row .btn{flex:1}
 
-    /* Hero carousel */
-    .hero-right{
-      position:relative;
-    }
+    /* Hero video (single) */
+    .hero-right{ position:relative; }
     .card-surface{
       background: rgba(255,255,255,.85);
       border: 1px solid var(--line);
@@ -183,25 +174,19 @@
       border-radius: var(--radius);
       overflow:hidden;
     }
-    .hslides{
-      display:flex;
-      transition: transform .55s ease;
-      will-change: transform;
-    }
-    .hslide{
-      flex:0 0 100%;
-      position:relative;
+    .hcarousel.single-video{ position:relative; }
+    .hcarousel.single-video .hvideo{
+      width:100%;
+      height:100%;
       aspect-ratio: 4/3;
-      background:#fff;
-    }
-    .hslide img{
-      width:100%; height:100%;
       object-fit:cover;
-      filter:saturate(1.02);
+      display:block;
+      background:#000;
     }
     .hgrad{
       position:absolute; inset:0;
       background: linear-gradient(180deg, rgba(0,0,0,.00) 45%, rgba(0,0,0,.55));
+      pointer-events:none;
     }
     .hbadge{
       position:absolute; left:16px; bottom:16px;
@@ -214,42 +199,36 @@
       display:inline-flex;
       gap:8px;
       align-items:center;
+      z-index:3;
     }
     .hbadge .p{
       width:10px;height:10px;border-radius:999px;
       background: var(--orange);
       box-shadow: 0 0 0 6px rgba(255,122,26,.15);
     }
-    .hnav{
+
+    /* Sound button */
+    .sound-btn{
       position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:42px;height:42px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.35);
-      background: rgba(255,255,255,.88);
-      box-shadow: 0 12px 24px rgba(2,6,23,.18);
+      right:14px;
+      bottom:14px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.22);
       cursor:pointer;
-      z-index:3;
+      font-weight:900;
+      background: rgba(0,0,0,.62);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
+      z-index:4;
+      backdrop-filter: blur(6px);
+      transition: transform .15s ease, background .2s ease;
+      user-select:none;
     }
-    .hnav.left{left:10px}
-    .hnav.right{right:10px}
-    .hdots{
-      display:flex; justify-content:center; gap:8px;
-      padding:12px 12px 14px;
-      background: rgba(255,255,255,.85);
-      border-top:1px solid var(--line);
-    }
-    .hdot{
-      width:10px;height:10px;border-radius:999px;
-      border:1px solid rgba(12,27,42,.22);
-      background:transparent;
-      cursor:pointer;
-      transition: transform .2s ease, background .2s ease;
-    }
-    .hdot.active{
-      background: var(--green);
-      border-color: var(--green);
-      transform: scale(1.15);
+    .sound-btn:active{transform: translateY(1px)}
+    .sound-btn.on{
+      background: rgba(11,90,44,.75);
+      border-color: rgba(255,255,255,.24);
     }
 
     /* Problem section */
@@ -297,9 +276,7 @@
       will-change: transform;
       padding: 4px 2px;
     }
-    .pslide{
-      flex: 0 0 100%;
-    }
+    .pslide{ flex: 0 0 100%; }
     .pdots{display:flex; justify-content:center; gap:8px; margin-top:10px}
     .pdot{
       width:10px;height:10px;border-radius:999px;
@@ -448,13 +425,6 @@
     }
     .pdetails h3{margin:10px 0 6px; font-size:24px; color:var(--green)}
     .pdetails .desc{margin:0 0 12px; color:var(--muted)}
-    .rating{
-      display:flex; gap:10px; align-items:center;
-      margin:10px 0 14px;
-      color: var(--muted);
-      font-size:14px;
-    }
-    .stars{color:#ffb200; font-weight:900}
     .price-row{
       display:flex;
       align-items:center;
@@ -502,7 +472,6 @@
       margin-top:16px;
     }
 
-    /* "Add to cart style" quantity line (optional) */
     .qtybar{
       display:flex;
       gap:12px;
@@ -526,9 +495,7 @@
       background:#fff; cursor:pointer; font-weight:900;
     }
     .qty span{min-width:16px;text-align:center}
-    .mini-tags{
-      display:flex; flex-wrap:wrap; gap:8px; margin-top:12px
-    }
+    .mini-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px }
     .mtag{
       display:inline-flex; gap:8px; align-items:center;
       padding:8px 12px; border-radius:999px;
@@ -540,9 +507,7 @@
     }
 
     /* Guru section (video) */
-    .guru{
-      background: linear-gradient(180deg, rgba(255,122,26,.06), rgba(19,138,67,.05), transparent);
-    }
+    .guru{ background: linear-gradient(180deg, rgba(255,122,26,.06), rgba(19,138,67,.05), transparent); }
     .guru-grid{
       display:grid;
       grid-template-columns: 1.1fr .9fr;
@@ -573,11 +538,7 @@
       position:relative;
       aspect-ratio: 16/9;
     }
-    .video-card iframe{
-      width:100%;
-      height:100%;
-      border:0;
-    }
+    .video-card iframe{ width:100%; height:100%; border:0; }
     .video-fallback{
       display:none;
       position:absolute; inset:0;
@@ -715,9 +676,7 @@
       font-size:13px;
       backdrop-filter: blur(10px);
     }
-    .m-right{
-      padding:18px;
-    }
+    .m-right{ padding:18px; }
     .mhead{
       display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
     }
@@ -732,13 +691,8 @@
       box-shadow: 0 10px 18px rgba(2,6,23,.08);
     }
     .m-right p{margin:8px 0 14px; color:var(--muted)}
-    .form{
-      display:grid;
-      gap:10px;
-    }
-    .field{
-      display:grid; gap:6px;
-    }
+    .form{ display:grid; gap:10px; }
+    .field{ display:grid; gap:6px; }
     .field label{font-weight:800; font-size:14px}
     .field input, .field textarea, .field select{
       width:100%;
@@ -769,7 +723,7 @@
     .wa-float{
       position:fixed;
       right:18px;
-      bottom:84px; /* above bottom bar */
+      bottom:84px;
       z-index:80;
     }
     .wa-btn{
@@ -788,7 +742,7 @@
     }
     .wa-btn:active{transform:translateY(1px)}
 
-    /* Sticky bottom bar (keep it) */
+    /* Sticky bottom bar */
     .bottom-bar{
       position:fixed;
       left:0; right:0; bottom:0;
@@ -826,7 +780,7 @@
       transform:none;
     }
 
-    /* Lightbox (optional) */
+    /* Lightbox */
     .lightbox{
       position:fixed; inset:0;
       display:none;
@@ -868,6 +822,7 @@
       .gnav.left{left:6px}
       .gnav.right{right:6px}
       .gcard{flex: 0 0 100%}
+      .sound-btn{right:12px; bottom:12px; padding:9px 12px; font-size:14px;}
     }
     @media (max-width: 980px){
       .gcard{flex: 0 0 calc((100% - 12px)/2);}
@@ -893,7 +848,7 @@
             <div class="t1">Team Sat Kartar</div>
             <div class="t2">Addiction Free Mission</div>
           </div>
-        </div>  
+        </div>
 
         <div class="top-cta">
           <a class="btn btn-ghost btn-small" href="#offer">Offer</a>
@@ -932,7 +887,6 @@
           <div class="hero-ctas">
             <a class="btn btn-orange" href="tel:9319728256">📞 Abhi Call Karein</a>
 
-            <!-- WhatsApp button removed from here; 2 buttons side-by-side -->
             <div class="btn-row">
               <button class="btn btn-green" onclick="openModal()">📝 Mera Call Back Karein</button>
               <a class="btn btn-ghost" href="#guru">▶ Guru Message Dekhein</a>
@@ -944,25 +898,22 @@
           </div>
         </div>
 
+        <!-- HERO RIGHT: SINGLE AUTO VIDEO (NO CAROUSEL) -->
         <div class="hero-right reveal">
           <div class="card-surface">
-            <div class="hcarousel" id="heroCarousel">
-              <button class="hnav left" type="button" aria-label="Prev" onclick="heroPrev()">‹</button>
-              <button class="hnav right" type="button" aria-label="Next" onclick="heroNext()">›</button>
+            <div class="hcarousel single-video" id="heroVideoWrap">
+              <!-- Put your video here -->
+              <video id="heroVideo" class="hvideo" autoplay muted loop playsinline preload="auto" poster="Images/hero-poster.jpg">
+                <source src="Videos/hero.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
 
-              <div class="hslides" id="heroSlides">
-                <div class="hslide">
-                  <img src="Images/hero-1.jpg" alt="Awareness drive">
-                </div>
-                <div class="hslide">
-                  <img src="Images/hero-2.jpg" alt="Family support">
-                </div>
-                <div class="hslide">
-                  <img src="Images/hero-3.jpg" alt="Healthy life">
-                </div>
-              </div>
+              <!-- User can enable sound manually -->
+              <button class="sound-btn" id="soundBtn" type="button" aria-label="Sound toggle">🔊 Sound On</button>
+
+              <div class="hgrad"></div>
+              <div class="hbadge"><span class="p"></span> Sankalp • Support • Sudhaar</div>
             </div>
-            <div class="hdots" id="heroDots"></div>
           </div>
         </div>
       </div>
@@ -1074,7 +1025,6 @@
         Kripya ise ek support system ki tarah samjhein — aapka sankalp sabse important hai.
       </p>
 
-      <!-- We keep 1 product image + 3 benefit cards -->
       <div class="product-page reveal" style="grid-template-columns:.85fr 1.15fr;">
         <div class="gallery-card">
           <img class="main-img" src="Images/BOX-1.jpg" alt="Addiction Killer Product">
@@ -1107,7 +1057,6 @@
       <p class="section-sub reveal">Offer limited time ke liye valid ho sakta hai. Exact guidance call par milegi.</p>
 
       <div class="product-page reveal">
-        <!-- Left: product images like product page -->
         <div class="gallery-card">
           <img id="mainProductImg" class="main-img" src="Images/product-box.png" alt="Addiction Killer">
           <div class="thumbs" id="thumbs">
@@ -1118,7 +1067,6 @@
           </div>
         </div>
 
-        <!-- Right: details -->
         <div class="pdetails">
           <div style="display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap;">
             <div style="font-weight:900;">Course: 3 Bottle Pack – 60 gm powder har bottle</div>
@@ -1152,7 +1100,7 @@
     </div>
   </section>
 
-  <!-- SECTION 4: Testimonials slider -->
+  <!-- SECTION 4: Testimonials slider (TOTAL 6) -->
   <section class="section" id="testimonials">
     <div class="container">
       <h2 class="section-title reveal">Logon ke anubhav – Parivaar mein phir se muskaan</h2>
@@ -1168,7 +1116,7 @@
             <div class="tcontent">
               <h4>“20 saal ka nasha, 3 mahine se bilkul band”</h4>
               <div class="tmeta"><span class="tname">Ramesh ji</span> • UP</div>
-              <div class="tq">“Main roz sharab peeta tha. Diabetes bhi thi. Doctor ne bola mushkil hoga. Support aur parivaar ke saath 3 mahine se ek boond nahi li.”</div>
+              <div class="tq">“Main roz sharab peeta tha. Diabetes bhi thi. Support aur parivaar ke saath 3 mahine se ek boond nahi li.”</div>
             </div>
           </div>
 
@@ -1187,6 +1135,36 @@
               <h4>“Ghar ka mahaul badal gaya”</h4>
               <div class="tmeta"><span class="tname">Neha ji</span> • Rajasthan</div>
               <div class="tq">“Pati sharab ki wajah se roz jhagda. 2 mahine se nahi li. Bachche bhi khush.”</div>
+            </div>
+          </div>
+
+          <!-- NEW 4 -->
+          <div class="titem">
+            <div class="timg"><img src="Images/t4.jpg" alt="Ajay"></div>
+            <div class="tcontent">
+              <h4>“Cravings kam hui, gussa control hua”</h4>
+              <div class="tmeta"><span class="tname">Ajay</span> • MP</div>
+              <div class="tq">“Peene ka mann baar-baar hota tha. 2–3 hafte me cravings manageable lagne lagi. Family ne bhi support diya.”</div>
+            </div>
+          </div>
+
+          <!-- NEW 5 -->
+          <div class="titem">
+            <div class="timg"><img src="Images/t5.jpg" alt="Sunita"></div>
+            <div class="tcontent">
+              <h4>“Husband ka routine sudharne laga”</h4>
+              <div class="tmeta"><span class="tname">Sunita ji</span> • Haryana</div>
+              <div class="tq">“Roz ki ladaai kam hui. Sleep aur mood me improvement aaya. Counselling + routine follow karne se fayda hua.”</div>
+            </div>
+          </div>
+
+          <!-- NEW 6 -->
+          <div class="titem">
+            <div class="timg"><img src="Images/t6.jpg" alt="Vikram"></div>
+            <div class="tcontent">
+              <h4>“Cigarette chhodne me support mila”</h4>
+              <div class="tmeta"><span class="tname">Vikram</span> • Gujarat</div>
+              <div class="tq">“Office stress me chain-smoking hoti thi. Is course ke saath cravings handle hui. Ab bahut kam ho gayi.”</div>
             </div>
           </div>
         </div>
@@ -1250,7 +1228,6 @@
 
         <div class="reveal">
           <div class="video-card" id="videoCard">
-            <!-- Use nocookie embed to avoid config errors -->
             <iframe
               id="ytFrame"
               src="https://www.youtube-nocookie.com/embed/iMJ4CWrdD-g?rel=0&modestbranding=1&playsinline=1"
@@ -1282,7 +1259,7 @@
     <a class="wa-btn" href="https://wa.me/919319728256?text=Namaste%2C%20Addiction%20Killer%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
   </div>
 
-  <!-- Sticky bottom bar (kept) -->
+  <!-- Sticky bottom bar -->
   <div class="bottom-bar">
     <div class="container">
       <div class="bottom-inner">
@@ -1375,41 +1352,38 @@
 
   <script>
     /* =========================
-      HERO CAROUSEL
+      HERO VIDEO: autoplay muted + user can enable sound
     ========================== */
-    let heroIndex = 0;
-    const heroSlides = document.getElementById('heroSlides');
-    const heroTotal = heroSlides ? heroSlides.children.length : 0;
-    const heroDots = document.getElementById('heroDots');
-    let heroTimer = null;
+    const heroVideo = document.getElementById('heroVideo');
+    const soundBtn  = document.getElementById('soundBtn');
 
-    function renderHeroDots(){
-      if(!heroDots) return;
-      heroDots.innerHTML = '';
-      for(let i=0;i<heroTotal;i++){
-        const b = document.createElement('button');
-        b.className = 'hdot' + (i===heroIndex ? ' active':'');
-        b.type = 'button';
-        b.addEventListener('click', ()=>{ heroGo(i,true); });
-        heroDots.appendChild(b);
-      }
+    // Ensure autoplay tries (some mobiles need user gesture)
+    function tryPlayHero(){
+      if(!heroVideo) return;
+      const p = heroVideo.play();
+      if(p && p.catch) p.catch(()=>{});
     }
-    function heroGo(i, user=false){
-      if(!heroSlides) return;
-      heroIndex = (i + heroTotal) % heroTotal;
-      heroSlides.style.transform = `translateX(-${heroIndex*100}%)`;
-      renderHeroDots();
-      if(user) heroRestart();
+    // Try once on load + once on first user interaction
+    window.addEventListener('load', tryPlayHero);
+    document.addEventListener('click', tryPlayHero, {once:true});
+    document.addEventListener('touchstart', tryPlayHero, {once:true, passive:true});
+
+    // Toggle sound (user gesture)
+    if(soundBtn && heroVideo){
+      soundBtn.addEventListener('click', ()=>{
+        heroVideo.muted = !heroVideo.muted;
+        heroVideo.volume = 1;
+        tryPlayHero();
+
+        if(heroVideo.muted){
+          soundBtn.classList.remove('on');
+          soundBtn.textContent = '🔊 Sound On';
+        }else{
+          soundBtn.classList.add('on');
+          soundBtn.textContent = '🔇 Mute';
+        }
+      });
     }
-    function heroPrev(){ heroGo(heroIndex-1,true); }
-    function heroNext(){ heroGo(heroIndex+1,true); }
-    function heroRestart(){
-      if(heroTimer) clearInterval(heroTimer);
-      heroTimer = setInterval(()=>heroGo(heroIndex+1,false), 3000);
-    }
-    renderHeroDots();
-    heroGo(0);
-    heroRestart();
 
     /* =========================
       PRODUCT THUMB SWITCH
@@ -1567,7 +1541,7 @@
     initGallerySlider('gSlider2','gDots2');
 
     /* =========================
-      TESTIMONIAL SLIDER
+      TESTIMONIAL SLIDER (works with 6 items)
     ========================== */
     (function(){
       const slider = document.getElementById('tSlider');
@@ -1642,7 +1616,6 @@
       if(e.target === modal) closeModal();
     });
 
-    // hard restrict: only digits, max 10
     phone && phone.addEventListener('input', ()=>{
       phone.value = (phone.value || '').replace(/\D/g,'').slice(0,10);
       if(phoneErr) phoneErr.classList.remove('show');
@@ -1662,7 +1635,6 @@
         return;
       }
 
-      // Demo: just show alert. Replace with your API/WhatsApp send later.
       const payload = {
         name: document.getElementById('name').value.trim(),
         phone: v,
@@ -1696,7 +1668,6 @@
     /* =========================
       VIDEO FALLBACK IF EMBED BLOCKED
     ========================== */
-    // If iframe fails to load, show fallback overlay
     const yt = document.getElementById('ytFrame');
     const fallback = document.getElementById('videoFallback');
     let ytLoaded = false;
@@ -1725,4 +1696,3 @@
   </script>
 </body>
 </html>
-
