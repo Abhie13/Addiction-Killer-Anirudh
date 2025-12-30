@@ -1,1133 +1,1733 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <title>Addiction Killer – Nasha Mukti Ayurveda</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Addiction Killer – Ayurvedic support for alcohol, cigarette, tobacco and other addictions. Free phone counselling and home delivery." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Addiction Killer – Nasha Chhodo, Parivaar Bachao</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5f7fb;
-      color: #111827;
-      line-height: 1.6;
-    }
-    img { height: auto; display: block; }
-    a { text-decoration: none; }
+    :root{
+      --bg:#ffffff;
+      --soft:#f7fbff;
+      --text:#0c1b2a;
+      --muted:#526171;
+      --line:rgba(12,27,42,.10);
 
-    .page-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: #ffffff;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-      min-height: 100vh;
+      --green:#0b5a2c;
+      --green2:#138a43;
+
+      --orange:#ff7a1a;
+      --orange2:#ff5a2a;
+
+      --shadow: 0 18px 45px rgba(15,23,42,.10);
+      --shadow2: 0 12px 30px rgba(2,6,23,.12);
+
+      --radius:22px;
+      --radius2:18px;
+
+      --max:1120px;
     }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Hind', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(900px 380px at 10% 0%, rgba(255,122,26,.12), transparent 60%),
+                  radial-gradient(900px 380px at 90% 0%, rgba(19,138,67,.12), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    img{max-width:100%; display:block}
+
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .section{padding:64px 0}
+    .section-title{
+      font-size:34px; line-height:1.2; margin:0 0 8px; color:var(--green);
+      letter-spacing:-.3px;
+    }
+    .section-sub{margin:0 0 18px; color:var(--muted); font-size:16px}
 
     /* Top bar */
-    .top-bar {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background: #0b5a2d;
-      color: #fff;
-      padding: 8px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
     }
-    .top-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 0;
+      gap:14px;
     }
-    .top-left img.logo {
-      height: 32px;
-      width: auto;
-    }
-    .top-right {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .btn-top {
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      border: 1px solid rgba(255,255,255,0.7);
-      color: #0b5a2d;
-      background: #fff;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand img{height:34px; width:auto}
+    .brand .t1{font-weight:800; color:var(--green); font-size:16px}
+    .brand .t2{font-size:12px; color:var(--muted); margin-top:-2px}
 
-    /* Sections */
-    .section {
-      padding: 24px 16px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .section:nth-child(even) { background: #f9fafb; }
-    .section-title {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: #0b5a2d;
-    }
-    .section-sub { font-size: 16px; margin-bottom: 16px; color:#111827; }
-
-    /* Hero */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .hero-left, .hero-right { flex: 1 1 280px; min-width: 260px; }
-    .hero-title { font-size: 28px; font-weight: 900; color: #0b5a2d; margin-bottom: 10px; }
-    .hero-subtitle { font-size: 17px; margin-bottom: 14px; color:#111827; }
-    .hero-bullets { list-style: none; margin-bottom: 16px; font-size: 15px; }
-    .hero-bullets li::before { content: "✔"; color: #15803d; margin-right: 6px; }
-
-    /* ✅ Only 2 buttons side-by-side */
-    .hero-cta-row {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 12px;
-      flex-wrap: nowrap;
-    }
-    .hero-cta-row a { flex: 1 1 50%; }
-    .hero-cta-row .btn-main { width: 100%; }
-
-    .btn-main {
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 15px;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .btn-call { background: #ee5c07; color: #fff; }
-    .btn-wa { background: #16a34a; color: #fff; }
-    .hero-note { font-size: 13px; color: #4b5563; }
-
-    .hero-right img { max-width: 360px; width: 100%; margin: 0 auto; border-radius:12px; }
-
-    /* Lead card */
-    .lead-card {
-      background: #ecfdf3;
-      border-radius: 12px;
-      padding: 16px;
-      border: 1px solid #bbf7d0;
-      margin-top: 20px;
-    }
-    .lead-card h3 { font-size: 18px; margin-bottom: 8px; color: #166534; font-weight:800; }
-    .lead-card p { font-size: 13px; color: #374151; margin-bottom: 10px; }
-    .form-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
-    .form-group { flex: 1 1 130px; min-width: 130px; display: flex; flex-direction: column; }
-    .form-group label { font-size: 13px; margin-bottom: 3px; }
-    .form-group input, .form-group select, .form-group textarea {
-      padding: 8px 10px;
-      border-radius: 8px;
-      border: 1px solid #d1d5db;
-      font-size: 14px;
-      outline: none;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus{
-      border-color:#16a34a;
-      box-shadow: 0 0 0 3px rgba(22,163,74,0.15);
-    }
-    .lead-submit { margin-top: 8px; width: 100%; }
-
-    /* Grid cards */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-      margin-top: 12px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 14px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
-      font-size: 14px;
-    }
-    .card strong { display: block; margin-bottom: 4px; color: #0f172a; }
-
-    .highlight-tag {
-      display: inline-block;
-      padding: 3px 8px;
-      font-size: 12px;
-      border-radius: 999px;
-      background: #fef3c7;
-      color: #92400e;
-      margin-bottom: 6px;
+    .top-cta{display:flex; gap:10px; align-items:center}
+    .btn{
+      border:0; cursor:pointer;
+      border-radius:999px;
+      padding:12px 16px;
       font-weight:800;
-    }
-    .trust-logos { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 13px; }
-    .badge-pill {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      background: #fff;
-      font-weight:600;
-    }
-
-    /* Product images */
-    #product img { max-width: 220px; width: 100%; margin: 0 auto 10px; }
-
-    /* ✅ Offer (flashy premium) */
-    .price-box{
-      background: linear-gradient(135deg, #fff7cc, #fff1b3);
-      border-radius: 18px;
-      padding: 18px;
-      border: 1px solid #f59e0b;
-      box-shadow: 0 12px 30px rgba(245,158,11,0.18);
-      position: relative;
-      overflow: hidden;
-    }
-    .price-box::before{
-      content:"";
-      position:absolute;
-      top:-60px;
-      right:-60px;
-      width:180px;
-      height:180px;
-      background: radial-gradient(circle, rgba(255,255,255,0.85), rgba(255,255,255,0));
-      transform: rotate(20deg);
-    }
-    .offer-pill{
       display:inline-flex;
       align-items:center;
-      gap:8px;
-      background:#111827;
-      color:#fff;
-      font-weight:800;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      margin: 10px 0 10px;
-    }
-    .price-line{
-      display:flex;
-      align-items:center;
+      justify-content:center;
       gap:10px;
-      flex-wrap:wrap;
-      margin: 6px 0 6px;
+      transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+      text-decoration:none;
+      user-select:none;
+      white-space:nowrap;
     }
-    .old-price{
-      color:#6b7280;
-      text-decoration: line-through;
-      font-size:18px;
-      font-weight:800;
-    }
-    .new-price{
-      color:#111827;
-      font-size:32px;
-      font-weight:900;
-      letter-spacing:0.2px;
-    }
-    .save-badge{
-      background: linear-gradient(90deg, #ff6a3d, #ff3d3d);
+    .btn:active{transform:translateY(1px)}
+    .btn-orange{
+      background:linear-gradient(135deg, var(--orange), var(--orange2));
       color:#fff;
-      font-size:13px;
-      font-weight:900;
-      padding:7px 12px;
-      border-radius:8px;
-      box-shadow: 0 8px 18px rgba(255,61,61,0.25);
+      box-shadow: 0 14px 30px rgba(255,122,26,.25);
     }
-    .offer-highlights{
+    .btn-green{
+      background:linear-gradient(135deg, var(--green2), var(--green));
+      color:#fff;
+      box-shadow: 0 14px 30px rgba(19,138,67,.22);
+    }
+    .btn-ghost{
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--text);
+      box-shadow: 0 10px 22px rgba(2,6,23,.06);
+    }
+    .btn-small{padding:10px 14px; font-size:14px}
+
+    /* Hero */
+    .hero{
+      padding:44px 0 28px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:26px;
+      align-items:center;
+    }
+    .hero-left h1{
+      margin:0 0 10px;
+      font-size:44px;
+      line-height:1.1;
+      letter-spacing:-.5px;
+      color:var(--green);
+    }
+    .hero-left p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+      max-width: 58ch;
+    }
+    .ticks{
+      margin:14px 0 18px;
+      display:grid;
+      gap:10px;
+    }
+    .tick{
+      display:flex; gap:10px; align-items:flex-start;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding:10px 12px;
+      box-shadow: 0 10px 22px rgba(2,6,23,.06);
+    }
+    .tick b{color:var(--text)}
+    .tick span{color:var(--muted); font-size:14px}
+    .tick .dot{
+      width:22px; height:22px; border-radius:999px;
+      background: rgba(19,138,67,.14);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--green);
+      font-weight:900;
+      flex:0 0 22px;
+      margin-top:1px;
+    }
+
+    .hero-ctas{
       display:flex;
+      gap:12px;
       flex-wrap:wrap;
-      gap:8px;
       margin-top:10px;
     }
-    .offer-chip{
-      background:#ffffff;
-      border:1px solid #fde68a;
-      color:#92400e;
-      font-weight:800;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
+    /* WhatsApp button under Abhi call removed; now 2 buttons side-by-side */
+    .hero-ctas .btn{min-width: 220px}
+    .hero-ctas .btn-row{
+      display:flex; gap:12px; flex-wrap:wrap;
+      width:100%;
     }
+    .hero-ctas .btn-row .btn{flex:1}
 
-    .faq-item { margin-bottom: 10px; font-size: 14px; }
-    .faq-item strong { display: block; color: #111827; }
-
-    .footer { font-size: 12px; color: #6b7280; padding-top: 10px; }
-
-    /* Problem section slider */
-    .problem-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-      margin-top: 12px;
+    /* Hero carousel */
+    .hero-right{
+      position:relative;
     }
-    .problem-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 14px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
-      font-size: 14px;
-    }
-    .problem-card h3 { font-size: 16px; font-weight: 800; margin: 8px 0 6px; color: #0f172a; }
-    .problem-card p { font-size: 14px; color: #374151; }
-    .problem-img {
-      width: 100%;
-      max-height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 8px;
-    }
-    @media (max-width: 767px) {
-      .problem-cards {
-        display: flex;
-        overflow-x: auto;
-        gap: 12px;
-        padding-bottom: 12px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-      }
-      .problem-card { min-width: 80%; scroll-snap-align: start; }
-      .problem-cards::-webkit-scrollbar { height: 6px; }
-      .problem-cards::-webkit-scrollbar-track { background: #e5e7eb; border-radius: 999px; }
-      .problem-cards::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 999px; }
-    }
-
-    /* ✅ Testimonial Slider (pure CSS swipe) */
-    .testi-wrap{ margin-top: 16px; }
-    .testi-slider{
-      display:flex;
-      gap:14px;
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: 10px 4px 14px;
-    }
-    .testi-slider::-webkit-scrollbar{ height: 6px; }
-    .testi-slider::-webkit-scrollbar-thumb{ background:#cbd5e1; border-radius:999px; }
-    .testi-card{
-      flex: 0 0 85%;
-      scroll-snap-align: start;
-      background: linear-gradient(180deg, #ffffff, #f8fafc);
-      border-radius: 16px;
-      padding: 14px;
-      box-shadow: 0 14px 40px rgba(2, 6, 23, 0.08);
-      border: 1px solid #e5e7eb;
-      position: relative;
+    .card-surface{
+      background: rgba(255,255,255,.85);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .testi-card::before{
-      content:"";
-      position:absolute;
-      top:-50px;
-      right:-60px;
-      width:160px;
-      height:160px;
-      background: radial-gradient(circle, rgba(16,185,129,0.18), rgba(16,185,129,0));
+    .hcarousel{
+      position:relative;
+      border-radius: var(--radius);
+      overflow:hidden;
     }
-    .testi-head{
+    .hslides{
+      display:flex;
+      transition: transform .55s ease;
+      will-change: transform;
+    }
+    .hslide{
+      flex:0 0 100%;
+      position:relative;
+      aspect-ratio: 4/3;
+      background:#fff;
+    }
+    .hslide img{
+      width:100%; height:100%;
+      object-fit:cover;
+      filter:saturate(1.02);
+    }
+    .hgrad{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.00) 45%, rgba(0,0,0,.55));
+    }
+    .hbadge{
+      position:absolute; left:16px; bottom:16px;
+      background: rgba(255,255,255,.90);
+      border:1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      padding:8px 12px;
+      font-weight:900;
+      box-shadow: 0 10px 22px rgba(2,6,23,.18);
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+    .hbadge .p{
+      width:10px;height:10px;border-radius:999px;
+      background: var(--orange);
+      box-shadow: 0 0 0 6px rgba(255,122,26,.15);
+    }
+    .hnav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:42px;height:42px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.88);
+      box-shadow: 0 12px 24px rgba(2,6,23,.18);
+      cursor:pointer;
+      z-index:3;
+    }
+    .hnav.left{left:10px}
+    .hnav.right{right:10px}
+    .hdots{
+      display:flex; justify-content:center; gap:8px;
+      padding:12px 12px 14px;
+      background: rgba(255,255,255,.85);
+      border-top:1px solid var(--line);
+    }
+    .hdot{
+      width:10px;height:10px;border-radius:999px;
+      border:1px solid rgba(12,27,42,.22);
+      background:transparent;
+      cursor:pointer;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .hdot.active{
+      background: var(--green);
+      border-color: var(--green);
+      transform: scale(1.15);
+    }
+
+    /* Problem section */
+    .pgrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .pcard{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      padding:16px;
+      box-shadow: 0 10px 22px rgba(2,6,23,.06);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      min-height: 130px;
+    }
+    .picon{
+      width:44px; height:44px; border-radius: 14px;
+      background: rgba(255,122,26,.12);
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 44px;
+      overflow:hidden;
+      border:1px solid rgba(255,122,26,.20);
+    }
+    .picon img{width:28px;height:28px; object-fit:contain}
+    .pcard h4{margin:0 0 6px; font-size:16px}
+    .pcard p{margin:0; color:var(--muted); font-size:14px}
+
+    /* Mobile: convert to slider */
+    .pslider{
+      position:relative;
+      overflow:hidden;
+      border-radius: var(--radius2);
+      margin-top:18px;
+      display:none;
+    }
+    .ptrack{
+      display:flex;
+      gap:12px;
+      transition: transform .55s ease;
+      will-change: transform;
+      padding: 4px 2px;
+    }
+    .pslide{
+      flex: 0 0 100%;
+    }
+    .pdots{display:flex; justify-content:center; gap:8px; margin-top:10px}
+    .pdot{
+      width:10px;height:10px;border-radius:999px;
+      border:1px solid rgba(12,27,42,.22);
+      background:transparent; cursor:pointer;
+    }
+    .pdot.active{background: var(--green); border-color: var(--green)}
+
+    /* Gallery auto slider */
+    .gallery-wrap{
+      background: linear-gradient(180deg, rgba(19,138,67,.08), rgba(255,122,26,.06), transparent);
+      border-top:1px solid rgba(12,27,42,.06);
+      border-bottom:1px solid rgba(12,27,42,.06);
+    }
+    .gslider{position:relative; margin-top:14px}
+    .gtrack-wrap{overflow:hidden; border-radius: 22px}
+    .gtrack{
+      display:flex;
+      gap:12px;
+      transition: transform .55s ease;
+      will-change: transform;
+      padding: 8px 2px;
+    }
+    .gcard{
+      flex: 0 0 calc((100% - 24px)/3);
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid rgba(15,23,42,.10);
+      background:#fff;
+      box-shadow: 0 12px 35px rgba(2,6,23,.08);
+      cursor:pointer;
+      position:relative;
+      min-height: 220px;
+    }
+    .gcard img{
+      width:100%; height:100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+    .gcard:hover img{transform: scale(1.04)}
+    .g-tag{
+      position:absolute; left:12px; bottom:12px;
+      background: rgba(0,0,0,.62);
+      color:#fff;
+      font-weight:900;
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+    }
+    .gnav{
+      position:absolute; top:50%;
+      transform:translateY(-50%);
+      width:42px;height:42px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.90);
+      box-shadow: 0 10px 22px rgba(2,6,23,.10);
+      cursor:pointer;
+      z-index:5;
+    }
+    .gnav.left{left:-6px}
+    .gnav.right{right:-6px}
+    .gdots{
+      display:flex; gap:8px; justify-content:center;
+      align-items:center; margin-top:12px;
+    }
+    .gdot{
+      width:10px;height:10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.25);
+      background:transparent;
+      cursor:pointer;
+      transition:transform .2s ease, background .2s ease;
+    }
+    .gdot.active{
+      background:#0b5a2c;
+      border-color:#0b5a2c;
+      transform:scale(1.15);
+    }
+
+    /* Product page style offer section */
+    .product-page{
+      display:grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap:22px;
+      align-items:start;
+      margin-top: 16px;
+    }
+    .gallery-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .main-img{
+      width:100%;
+      aspect-ratio: 4/3;
+      object-fit: contain;
+      background: radial-gradient(500px 200px at 50% 20%, rgba(255,122,26,.10), transparent 55%),
+                  radial-gradient(500px 200px at 50% 90%, rgba(19,138,67,.10), transparent 55%),
+                  #fff;
+      padding:18px;
+    }
+    .thumbs{
+      display:flex;
+      gap:10px;
+      padding:12px;
+      border-top:1px solid var(--line);
+      background: rgba(247,251,255,.9);
+      overflow:auto;
+    }
+    .thumb{
+      width:66px;height:56px;
+      border-radius:14px;
+      border:1px solid rgba(12,27,42,.12);
+      background:#fff;
+      cursor:pointer;
+      flex:0 0 auto;
+      display:flex;align-items:center;justify-content:center;
+      padding:6px;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .thumb img{width:100%;height:100%;object-fit:contain}
+    .thumb.active{
+      outline:2px solid rgba(255,122,26,.45);
+      box-shadow: 0 10px 20px rgba(255,122,26,.18);
+    }
+
+    .pdetails{
+      background: rgba(255,255,255,.90);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .pill{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:13px;
+      border:1px solid rgba(255,122,26,.25);
+      background: rgba(255,122,26,.10);
+      color:#7a2d06;
+    }
+    .pdetails h3{margin:10px 0 6px; font-size:24px; color:var(--green)}
+    .pdetails .desc{margin:0 0 12px; color:var(--muted)}
+    .rating{
+      display:flex; gap:10px; align-items:center;
+      margin:10px 0 14px;
+      color: var(--muted);
+      font-size:14px;
+    }
+    .stars{color:#ffb200; font-weight:900}
+    .price-row{
       display:flex;
       align-items:center;
       gap:12px;
-      margin-bottom:10px;
+      flex-wrap:wrap;
+      margin:14px 0 6px;
     }
-    .testi-img{
-      width: 96px;
-      height: 96px;
-      border-radius:50%;
-      object-fit:cover;
-      border: 3px solid #d1fae5;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.10);
-      flex:0 0 auto;
+    .cut{
+      color:#6b7280;
+      text-decoration: line-through;
+      font-weight:800;
+      font-size:18px;
     }
-    .testi-title{
-      font-size: 15px;
-      font-weight: 900;
-      color: #0f172a;
-      line-height: 1.25;
-      margin-bottom: 3px;
+    .now{
+      font-size:34px;
+      font-weight:900;
+      color:#0f172a;
+      letter-spacing:-.3px;
     }
-    .testi-meta{
-      font-size: 12px;
-      color: #6b7280;
-      font-weight: 800;
-    }
-    .testi-text{
-      font-size: 14px;
-      color: #111827;
-      line-height: 1.65;
-    }
-    .testi-quote{
-      font-size: 30px;
-      font-weight: 900;
-      color: rgba(11,90,45,0.22);
-      position:absolute;
-      left: 14px;
-      bottom: 6px;
-    }
-    @media (max-width: 767px){
-      .testi-card{ flex: 0 0 90%; }
-      .testi-img{ width: 104px; height: 104px; }
-    }
-
-    .video-box{
-      width:100%;
-      max-width: 520px;
-      margin: 0 auto;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 14px 40px rgba(2, 6, 23, 0.10);
-      background: #000;
-      aspect-ratio: 16 / 9;
-    }
-    .video-box iframe{
-      width: 100%;
-      height: 100%;
-      display:block;
-    }
-
-    /* ===== Premium Product Section ===== */
-    .product-premium{
-      display:grid;
-      grid-template-columns: 420px 1fr;
-      gap: 22px;
-      align-items: stretch;
-      margin-top: 12px;
-    }
-
-    .product-visual{
-      background: linear-gradient(135deg, #ecfdf3, #ffffff);
-      border: 1px solid #bbf7d0;
-      border-radius: 18px;
-      padding: 16px;
-      box-shadow: 0 14px 40px rgba(2, 6, 23, 0.07);
-      position: relative;
-      overflow: hidden;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .product-visual::before{
-      content:"";
-      position:absolute;
-      top:-70px;
-      left:-70px;
-      width:220px;
-      height:220px;
-      background: radial-gradient(circle, rgba(22,163,74,0.22), rgba(22,163,74,0));
-    }
-
-    .product-badge{
-      position:absolute;
-      top: 12px;
-      right: 12px;
-      background:#111827;
+    .save{
+      background:#ff6a3d;
       color:#fff;
       font-weight:900;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-    }
-
-    .product-img{
-      width: 100%;
-      max-width: 340px;
-      margin: 22px auto 10px;
-      border-radius: 14px;
-      filter: drop-shadow(0 18px 26px rgba(0,0,0,0.12));
-    }
-
-    .product-note{
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      background:#ffffff;
-      border:1px solid #e5e7eb;
+      padding:7px 10px;
+      border-radius: 8px;
       font-size:13px;
-      font-weight:700;
-      color:#0f172a;
-      text-align:center;
     }
-
-    .product-info{
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 16px;
-      box-shadow: 0 14px 40px rgba(2, 6, 23, 0.06);
-    }
-
-    .benefit-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .benefit-card{
+    .delivery{
       display:flex;
-      gap: 12px;
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      gap:10px;
+      align-items:center;
+      margin:10px 0 2px;
+      color:#0f172a;
+      font-weight:800;
+    }
+    .note{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .pcta{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
     }
 
-    .benefit-icon{
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
+    /* "Add to cart style" quantity line (optional) */
+    .qtybar{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(247,251,255,.9);
+      border:1px solid rgba(12,27,42,.10);
+    }
+    .qty{
+      display:flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      background:#fff;
+      border:1px solid rgba(12,27,42,.12);
+      font-weight:900;
+    }
+    .qty button{
+      width:30px;height:30px;border-radius:999px;border:1px solid rgba(12,27,42,.12);
+      background:#fff; cursor:pointer; font-weight:900;
+    }
+    .qty span{min-width:16px;text-align:center}
+    .mini-tags{
+      display:flex; flex-wrap:wrap; gap:8px; margin-top:12px
+    }
+    .mtag{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(12,27,42,.12);
+      background:#fff;
+      font-weight:800;
+      font-size:13px;
+      box-shadow: 0 10px 18px rgba(2,6,23,.06);
+    }
+
+    /* Guru section (video) */
+    .guru{
+      background: linear-gradient(180deg, rgba(255,122,26,.06), rgba(19,138,67,.05), transparent);
+    }
+    .guru-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:center;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border-radius:999px;
+      padding:7px 12px;
+      background: rgba(255,122,26,.12);
+      border:1px solid rgba(255,122,26,.20);
+      font-weight:900;
+      font-size:13px;
+      color:#7a2d06;
+      width:fit-content;
+      margin-bottom:12px;
+    }
+    .guru p{color:var(--muted); margin:0 0 12px}
+    .video-card{
+      background:#0b0f14;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(12,27,42,.12);
+      box-shadow: var(--shadow2);
+      position:relative;
+      aspect-ratio: 16/9;
+    }
+    .video-card iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
+    .video-fallback{
+      display:none;
+      position:absolute; inset:0;
+      align-items:center; justify-content:center;
+      padding:18px;
+      color:#fff;
+      text-align:center;
+      background: radial-gradient(700px 260px at 50% 0%, rgba(255,122,26,.18), transparent 55%),
+                  radial-gradient(700px 260px at 50% 100%, rgba(19,138,67,.18), transparent 55%),
+                  rgba(11,15,20,.85);
+    }
+
+    /* Testimonials slider */
+    .tslider{
+      position:relative;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.90);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      margin-top:16px;
+    }
+    .ttrack{
+      display:flex;
+      transition: transform .6s ease;
+      will-change: transform;
+    }
+    .titem{
+      flex:0 0 100%;
+      padding:18px;
+      display:grid;
+      grid-template-columns: 220px 1fr;
+      gap:16px;
+      align-items:center;
+      min-height: 220px;
+    }
+    .timg{
+      width:220px;
+      height:220px;
+      border-radius: 20px;
+      overflow:hidden;
+      border:1px solid rgba(12,27,42,.12);
+      box-shadow: 0 12px 26px rgba(2,6,23,.12);
+      background:#fff;
+    }
+    .timg img{width:100%;height:100%;object-fit:cover}
+    .tcontent h4{margin:0 0 6px; font-size:20px; color:var(--green)}
+    .tcontent p{margin:0 0 8px; color:var(--muted)}
+    .tname{font-weight:900; color:#0f172a}
+    .tmeta{color:var(--muted); font-size:14px}
+    .tq{
+      background: rgba(255,122,26,.10);
+      border:1px solid rgba(255,122,26,.18);
+      padding:10px 12px;
+      border-radius: 16px;
+      margin-top:10px;
+      font-weight:700;
+      color:#4b1f0a;
+    }
+    .tnav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:42px;height:42px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 10px 22px rgba(2,6,23,.12);
+      cursor:pointer;
+      z-index:4;
+    }
+    .tnav.left{left:10px}
+    .tnav.right{right:10px}
+    .tdots{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      padding:14px 0 16px;
+      border-top:1px solid rgba(12,27,42,.08);
+      background: rgba(247,251,255,.9);
+    }
+    .tdot{
+      width:10px;height:10px;border-radius:999px;
+      border:1px solid rgba(12,27,42,.22);
+      background:transparent;
+      cursor:pointer;
+    }
+    .tdot.active{background: var(--green); border-color: var(--green)}
+
+    /* Popup modal form */
+    .modal{
+      position:fixed;
+      inset:0;
+      background: rgba(2,6,23,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:100;
+    }
+    .modal.open{display:flex}
+    .modal-card{
+      width:min(920px, 100%);
+      background:#fff;
+      border-radius: 26px;
+      overflow:hidden;
+      box-shadow: 0 30px 80px rgba(2,6,23,.35);
+      display:grid;
+      grid-template-columns: .95fr 1.05fr;
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .m-left{
+      background: radial-gradient(700px 260px at 50% 0%, rgba(255,122,26,.18), transparent 55%),
+                  radial-gradient(700px 260px at 50% 100%, rgba(19,138,67,.18), transparent 55%),
+                  #0b0f14;
+      color:#fff;
+      padding:18px;
+      position:relative;
+    }
+    .m-left img{
+      width:100%;
+      height:100%;
+      max-height: 360px;
+      object-fit:cover;
+      border-radius: 18px;
+      opacity:.92;
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .m-left .mlabel{
+      position:absolute; left:18px; top:18px;
+      background: rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.18);
+      padding:7px 10px;
+      border-radius: 999px;
+      font-weight:900;
+      font-size:13px;
+      backdrop-filter: blur(10px);
+    }
+    .m-right{
+      padding:18px;
+    }
+    .mhead{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    }
+    .mhead h3{margin:0; color:var(--green); font-size:22px}
+    .close{
+      border:1px solid rgba(12,27,42,.12);
+      background:#fff;
+      width:42px; height:42px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:900;
+      box-shadow: 0 10px 18px rgba(2,6,23,.08);
+    }
+    .m-right p{margin:8px 0 14px; color:var(--muted)}
+    .form{
+      display:grid;
+      gap:10px;
+    }
+    .field{
+      display:grid; gap:6px;
+    }
+    .field label{font-weight:800; font-size:14px}
+    .field input, .field textarea, .field select{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(12,27,42,.12);
+      background:#fff;
+      font-size:15px;
+      outline:none;
+      transition: box-shadow .15s ease, border-color .15s ease;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus{
+      border-color: rgba(255,122,26,.55);
+      box-shadow: 0 0 0 6px rgba(255,122,26,.12);
+    }
+    .hint{font-size:12px; color:var(--muted)}
+    .error{font-size:12px; color:#b42318; display:none}
+    .error.show{display:block}
+    .m-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top:6px;
+      flex-wrap:wrap;
+    }
+
+    /* Sticky WhatsApp bubble */
+    .wa-float{
+      position:fixed;
+      right:18px;
+      bottom:84px; /* above bottom bar */
+      z-index:80;
+    }
+    .wa-btn{
+      width:56px;height:56px;border-radius:999px;
+      background: linear-gradient(135deg, #25D366, #0fb24a);
+      border:0;
+      cursor:pointer;
+      box-shadow: 0 18px 34px rgba(0,0,0,.22);
       display:flex;
       align-items:center;
       justify-content:center;
-      background: #ecfdf3;
-      border: 1px solid #bbf7d0;
-      font-size: 20px;
-      flex: 0 0 auto;
+      color:#fff;
+      font-size:24px;
+      transition: transform .15s ease;
+      text-decoration:none;
     }
+    .wa-btn:active{transform:translateY(1px)}
 
-    .benefit-title{
-      font-weight: 900;
-      font-size: 15px;
-      color:#0f172a;
-      margin-bottom: 2px;
+    /* Sticky bottom bar (keep it) */
+    .bottom-bar{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-top:1px solid var(--line);
+      z-index:70;
+      padding:10px 0;
     }
-
-    .benefit-text{
-      font-size: 14px;
-      color:#374151;
-      line-height: 1.55;
+    .bottom-inner{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
     }
-
-    /* responsive */
-    @media (max-width: 900px){
-      .product-premium{
-        grid-template-columns: 1fr;
-      }
-      .product-img{
-        max-width: 320px;
-      }
+    .bb-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
     }
+    .bb-text b{color:var(--green); font-size:14px}
+    .bb-text span{color:var(--muted); font-size:12px}
+    .bb-actions{display:flex; gap:10px; flex-wrap:wrap}
+    .bb-actions .btn{padding:10px 14px}
 
-
-    /* Floating WhatsApp button bottom-right */
-    .floating-wa {
-      position: fixed;
-      right: 16px;
-      bottom: 72px; /* mobile: above sticky bar */
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #16a34a;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      font-size: 30px;
-      z-index: 1000;
-    }
-
-    /* Sticky bottom bar (mobile) */
-    .sticky-bottom {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #0b5a2d;
-      padding: 8px 10px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      z-index: 900;
-    }
-    .sticky-bottom a { flex: 1; }
-    .sticky-bottom .btn-main { width: 100%; font-size: 14px; padding: 8px 10px; }
-
-    @media (min-width: 768px) {
-      .hero-title { font-size: 34px; }
-      .hero-subtitle { font-size: 18px; }
-
-      .sticky-bottom { display: none; }
-      .floating-wa { right: 24px; bottom: 24px; }
-    }
-    /* ===== Smooth Animations (lightweight) ===== */
+    /* Scroll reveal */
     .reveal{
-      opacity: 0;
+      opacity:0;
       transform: translateY(18px);
       transition: opacity .7s ease, transform .7s ease;
-      will-change: opacity, transform;
     }
-    .reveal.is-visible{
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* slightly different directions (optional) */
-    .reveal-left{ transform: translateX(-16px); }
-    .reveal-right{ transform: translateX(16px); }
-    .reveal-left.is-visible,
-    .reveal-right.is-visible{ transform: translateX(0); }
-
-   /* hover lift for cards */
-    .card, .problem-card, .testi-card, .benefit-card, .price-box, .lead-card, .product-visual, .product-info{
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .card:hover, .problem-card:hover, .testi-card:hover, .benefit-card:hover, .price-box:hover, .lead-card:hover,
-    .product-visual:hover, .product-info:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 18px 50px rgba(2, 6, 23, 0.12);
+    .reveal.show{
+      opacity:1;
+      transform:none;
     }
 
-    /* CTA buttons subtle pulse */
-    @keyframes softPulse{
-     0%{ transform: translateY(0); }
-      50%{ transform: translateY(-2px); }
-      100%{ transform: translateY(0); }
+    /* Lightbox (optional) */
+    .lightbox{
+      position:fixed; inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background: rgba(2,6,23,.75);
+      z-index:120;
+      padding:18px;
     }
-    .btn-call{ animation: softPulse 2.2s ease-in-out infinite; }
-    @media (prefers-reduced-motion: reduce){
-      .btn-call{ animation: none; }
-      .reveal{ transition: none; transform: none; opacity: 1; }
+    .lightbox.open{display:flex}
+    .lightbox img{
+      max-width:min(980px, 100%);
+      max-height: 80vh;
+      border-radius: 20px;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+      background:#fff;
+      object-fit:contain;
     }
 
-    /* Save badge pop */
-    @keyframes badgePop{
-       0%, 100%{ transform: scale(1); }
-      50%{ transform: scale(1.04); }
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr; gap:18px}
+      .product-page{grid-template-columns:1fr}
+      .guru-grid{grid-template-columns:1fr}
+      .pgrid{display:none}
+      .pslider{display:block}
+      .titem{grid-template-columns: 1fr; }
+      .timg{width:100%; height:260px}
+      .modal-card{grid-template-columns:1fr}
+      .m-left{display:none}
+      .pcta{grid-template-columns:1fr}
+      .hero-ctas .btn-row{flex-direction:column}
+      .hero-ctas .btn-row .btn{width:100%}
     }
-    .save-badge{ animation: badgePop 1.8s ease-in-out infinite; }
+    @media (max-width: 520px){
+      .hero-left h1{font-size:34px}
+      .section-title{font-size:28px}
+      .gnav.left{left:6px}
+      .gnav.right{right:6px}
+      .gcard{flex: 0 0 100%}
+    }
+    @media (max-width: 980px){
+      .gcard{flex: 0 0 calc((100% - 12px)/2);}
+    }
+    @media (max-width: 520px){
+      .gcard{flex: 0 0 100%;}
+    }
 
+    /* Prevent bottom bar overlap */
+    .spacer{height: 88px}
   </style>
 </head>
 
 <body>
-  <div class="page-wrap">
 
-    <!-- Top Bar -->
-    <header class="top-bar">
-      <div class="top-left">
-        <img src="images/sat-kartar-logo.png" alt="Sat Kartar Logo" class="logo">
-      </div>
-      <div class="top-right">
-        <a href="tel:+917428382862" class="btn-top">📞 Call: 74283 82862</a>
-        <a href="https://wa.me/917428382862" class="btn-top">💬 WhatsApp</a>
-      </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="section" id="top">
-      <div class="hero">
-        <div class="hero-left">
-          <h1 class="hero-title">Nasha Chhodo, Parivaar Bachao</h1>
-          <p class="hero-subtitle">
-            <strong>Addiction Killer</strong> – 100% Ayurvedic support sharab, cigarette, tambaaku jaise nashon se chutkaara pane mein sahayak.
-            Guru kripa + Ayurveda ke saath ek naya jeevan shuru karein.
-          </p>
-          <ul class="hero-bullets">
-            <li>Sharab, cigarette, gutkha ki aadat chhodne mein sahayak</li>
-            <li>100% Ayurvedic, chemical free formula</li>
-            <li>Doctor se phone par salaah, ghar baithay delivery</li>
-          </ul>
-
-          <!-- ✅ Only 2 buttons (no WhatsApp here) -->
-          <div class="hero-cta-row">
-            <a href="tel:+917428382862">
-              <button class="btn-main btn-call">📞 Abhi Call Karein</button>
-            </a>
-            <a href="#lead-form">
-              <button class="btn-main" style="background:#0369a1;color:#fff;">📋 Mera Call Back Karein</button>
-            </a>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="brand">
+          <img src="Images/logo.png" alt="Sat Kartar Logo">
+          <div style="display: none;">
+            <div class="t1">Team Sat Kartar</div>
+            <div class="t2">Addiction Free Mission</div>
           </div>
+        </div>  
 
-          <div class="hero-note">
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <img src="images/addiction-killer-aniruddhacharya-addiction-mukti-satkartar.jpg"
-               alt="Addiction Killer Ayurvedic powder with Aniruddhacharya Ji promoting addiction free life">
-          <div style="margin-top:8px;font-size:12px;color:#4b5563;text-align:center;">
-          </div>
+        <div class="top-cta">
+          <a class="btn btn-ghost btn-small" href="#offer">Offer</a>
+          <button class="btn btn-orange btn-small" onclick="openModal()">Call Back Form</button>
         </div>
       </div>
-
-      <!-- Mini form -->
-      <div class="lead-card">
-        <h3>Free Call Back – Nasha chhodne ka pehla kadam</h3>
-        <p>Form bharen, hamara counselor aapse baat karke aapko sahi salah aur dosage batayega.</p>
-        <form id="mini-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="mini-name">Naam*</label>
-              <input id="mini-name" name="name" type="text" required>
-            </div>
-            <div class="form-group">
-              <label for="mini-mobile">Mobile Number*</label>
-              <input id="mini-mobile" name="mobile" type="tel"
-                     required minlength="10" maxlength="10"
-                     pattern="[0-9]{10}"
-                     oninput="this.value=this.value.replace(/[^0-9]/g,'')">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="mini-state">Rajya / Shehar</label>
-              <input id="mini-state" name="state" type="text" placeholder="Jaise: UP, Delhi">
-            </div>
-            <div class="form-group">
-              <label for="mini-addiction">Kis nasha se pareshan?*</label>
-              <select id="mini-addiction" name="addiction" required>
-                <option value="">Chunein</option>
-                <option value="Sharab">Sharab</option>
-                <option value="Cigarette">Cigarette</option>
-                <option value="Tambaaku / Gutkha">Tambaaku / Gutkha</option>
-                <option value="Multi addiction">Ek se zyada nasha</option>
-                <option value="Dusra">Koi aur</option>
-              </select>
-            </div>
-          </div>
-          <button type="submit" class="btn-main btn-call lead-submit">📞 Mera Call Back Karein</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Problem -->
-    <section class="section" id="problem">
-      <h2 class="section-title">Nasha sirf aadmi ko nahi, poore ghar ko dard deta hai</h2>
-      <p class="section-sub">
-        Sharab, cigarette, gutkha, powder – ye sab dheere dheere badan, mann aur paisa teenon ko kha jaate hain.
-        Sabse zyada dard hota hai <strong>parivaar ko</strong>.
-      </p>
-
-      <div class="problem-cards">
-        <div class="problem-card">
-          <img src="images/problem-rona-tanav.jpg" alt="Parivaar mein jhagda aur rona dhona" class="problem-img">
-          <h3>Rona aur tanav</h3>
-          <p>Raat ko deri se sharab pi kar aana, jhagda, gussa – bachche dara hua mehsoos karte hain.</p>
-        </div>
-
-        <div class="problem-card">
-          <img src="images/problem-sehat-kharab.jpg" alt="Sehat kharab" class="problem-img">
-          <h3>Sehat dheere dheere toot ti hai</h3>
-          <p>Khansi, kamjori, pet ki problem, liver par asar – nasha sharir ka dushman ban jaata hai.</p>
-        </div>
-
-        <div class="problem-card">
-          <img src="images/problem-paise-nuksan.jpg" alt="Paise ka nuksaan" class="problem-img">
-          <h3>Paise ka nuksaan</h3>
-          <p>Rozana nasha, mahine ka bada kharcha. Yehi paise parivaar ki padhai aur bhavishya mein lag sakte hain.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Acharya message -->
-    <section class="section" id="message">
-      <div class="hero">
-        <div class="hero-left">
-          <span class="highlight-tag">Guru Margdarshan</span>
-          <h2 class="section-title">Sankalp ke bina nasha chhodna mushkil hai</h2>
-          <p class="section-sub">
-            Santon, acharyon aur guruon ka sandesh saaf hota hai –
-            <strong>“Nasha chhodo, dhyaan aur seva mein jeevan lagao.”</strong><br><br>
-            Aap khud sankalp lein, aur <strong>Addiction Killer</strong> jaise Ayurvedic sahayak ke saath
-            apni journey easy bana sakte hain.
-          </p>
-          <p style="font-size:14px;color:#374151;margin-bottom:10px;">
-            Aaj hi dil se nirnay lein: <strong>“Main nasha chhodunga / chhodungi – apne parivaar ke liye.”</strong>
-          </p>
-          <a href="#lead-form"><button class="btn-main btn-wa">🙏 Mera Sankalp Register Karein</button></a>
-        </div>
-        <div class="hero-right">
-        <div class="video-box">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/iMJ4CWrdD-g?rel=0&modestbranding=1&playsinline=1"
-            title="Addiction Free Message"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- Product -->
-    <section class="section" id="product">
-      <h2 class="section-title">Addiction Killer – Ayurveda ka sahayak formula</h2>
-      <p class="section-sub">
-        Ye ek <strong>Ayurvedic Proprietary Medicine</strong> hai jo nasha chhodne ki prakriya ko support kar sakti hai.
-        Kripya ise ek support system ki tarah samjhein – aapka asli bal aapka sankalp hai.
-      </p>
-
-      <div class="product-premium">
-        <!-- Left: Product -->
-        <div class="product-visual">
-          <div class="product-badge">⭐ Best Seller</div>
-          <img
-            src="images/addiction-killer-ayurvedic-medicine-box-satkartar.png"
-            alt="Sat Kartar Addiction Killer 3 bottle pack"
-            class="product-img"
-          />
-          <div class="product-note">
-            ✅ COD Available • ✅ India-wide Delivery • ✅ Privacy Safe
-          </div>
-        </div>
-
-        <!-- Right: Benefits -->
-        <div class="product-info">
-          <div class="benefit-grid">
-            <div class="benefit-card">
-              <div class="benefit-icon">🧠</div>
-              <div>
-                <div class="benefit-title">Cravings mein sahayak</div>
-                <div class="benefit-text">Nasha chhodte waqt zor ki ichchha ko control karne mein support.</div>
-              </div>
-            </div>
-
-            <div class="benefit-card">
-              <div class="benefit-icon">🫀</div>
-              <div>
-                <div class="benefit-title">Sharir ko support</div>
-                <div class="benefit-text">Pachan aur liver care ke through body ko support milta hai.</div>
-              </div>
-            </div>
-
-            <div class="benefit-card">
-              <div class="benefit-icon">🌿</div>
-              <div>
-                <div class="benefit-title">Mann ko shaant rakhne mein sahayak</div>
-                <div class="benefit-text">Chidhchidhapan aur tension ko kam karne mein support.</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="trust-logos" style="margin-top:14px;">
-            <span class="badge-pill">✅ 100% Ayurvedic</span>
-            <span class="badge-pill">✅ GMP Certified</span>
-            <span class="badge-pill">✅ No Alcohol</span>
-            <span class="badge-pill">✅ India-wide Delivery</span>
-          </div>
-
-          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a href="#offer" style="flex:1 1 180px;">
-              <button class="btn-main btn-wa" style="width:100%;">🔥 Offer Dekhein</button>
-            </a>
-            <a href="#lead-form" style="flex:1 1 180px;">
-              <button class="btn-main btn-call" style="width:100%;">📞 Call Back Mangey</button>
-            </a>
-          </div>
-    
-          <div style="font-size:12px;color:#6b7280;margin-top:10px;">
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="section" id="how">
-      <h2 class="section-title">Kaise kaam karega? – Sirf 3 simple steps</h2>
-      <div class="grid-3">
-        <div class="card"><strong>Step 1 – Hamse juriye</strong> Call/WhatsApp ya form bhar dein.</div>
-        <div class="card"><strong>Step 2 – Free counseling</strong> Team aapki problem samajh kar guidance degi.</div>
-        <div class="card"><strong>Step 3 – Ghar tak delivery</strong> Product aapke ghar courier ho jayega.</div>
-      </div>
-      <div style="margin-top:14px;">
-        <a href="#lead-form"><button class="btn-main btn-call">📞 Abhi Pehla Step Lijiye – Call Back Mangey</button></a>
-      </div>
-    </section>
-
-    <!-- ✅ Testimonials (Premium Slider + big images) -->
-    <section class="section" id="trust">
-      <h2 class="section-title">Logon ke anubhav – Parivaar mein phir se muskaan</h2>
-      <p class="section-sub">
-        Har vyakti ka anubhav alag hota hai, lekin kuch parivaaron ki kahaniyan aapko umeed de sakti hain.
-      </p>
-
-      <div class="testi-wrap">
-        <div class="testi-slider" id="testiSlider">
-
-          <div class="testi-card">
-            <div class="testi-head">
-              <img class="testi-img" src="images/testimonial-ramesh.jpg" alt="Ramesh ji testimonial photo">
-              <div>
-                <div class="testi-title">“20 saal ka nasha, 3 mahine se bilkul band”</div>
-                <div class="testi-meta">Ramesh ji • UP</div>
-              </div>
-            </div>
-            <div class="testi-text">
-              “Main roz sharab peeta tha. Diabetes bhi thi. Doctor ne nasha chhodne ko bola par mushkil tha.
-              Addiction Killer course aur parivaar ki support se 3 mahine se ek boond nahi li.”
-            </div>
-            <div class="testi-quote">❝</div>
-          </div>
-
-          <div class="testi-card">
-            <div class="testi-head">
-              <img class="testi-img" src="images/testimonial-sandeep.jpg" alt="Sandeep testimonial photo">
-              <div>
-                <div class="testi-title">“Cigarette se chutkaara, saans mein aaraam”</div>
-                <div class="testi-meta">Sandeep • Delhi</div>
-              </div>
-            </div>
-            <div class="testi-text">
-              “Din bhar 1 pack cigarette finish. Khansi ruk nahi rahi thi. Course start karne ke 4 hafte baad
-              cigarette se mann hatne laga.”
-            </div>
-            <div class="testi-quote">❝</div>
-          </div>
-
-          <div class="testi-card">
-            <div class="testi-head">
-              <img class="testi-img" src="images/testimonial-neha.jpg" alt="Neha ji testimonial photo">
-              <div>
-                <div class="testi-title">“Ghar ka mahaul badal gaya”</div>
-                <div class="testi-meta">Neha ji • Rajasthan</div>
-              </div>
-            </div>
-            <div class="testi-text">
-              “Mere pati sharab ki wajah se roz jhagda karte the. Aaj 2 mahine se sharab nahi li, bachche bhi khush.”
-            </div>
-            <div class="testi-quote">❝</div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="trust-logos" style="margin-top:16px;">
-        <span class="badge-pill">10,000+ parivaar jud chuke*</span>
-        <span class="badge-pill">Doctor & Ayurvedic guidance</span>
-        <span class="badge-pill">Secrecy aur privacy ka dhyan</span>
-      </div>
-      <p style="font-size:11px;color:#6b7280;margin-top:6px;">
-      </p>
-    </section>
-
-    <!-- Offer -->
-    <section class="section" id="offer">
-      <h2 class="section-title">Course Details & Special Offer</h2>
-
-      <div class="price-box">
-        <div><strong>Course:</strong> 3 Bottle Pack – 60 gm powder har bottle</div>
-        <div class="offer-pill">⏳ Limited Time Offer • COD Available</div>
-
-        <div class="price-line">
-          <span class="old-price">₹3359</span>
-          <span class="new-price">₹2799</span>
-          <span class="save-badge">Save ₹560</span>
-        </div>
-
-        <div style="margin-top:6px;font-weight:700;">Cash on Delivery | India bhar mein delivery upalabdh</div>
-
-        <div class="offer-highlights">
-          <span class="offer-chip">🚚 Free Delivery*</span>
-          <span class="offer-chip">🔒 Privacy Safe</span>
-          <span class="offer-chip">📞 Free Counseling</span>
-        </div>
-
-        <div style="font-size:12px;margin-top:10px;color:#6b7280;">
-        </div>
-
-        <div style="margin-top:12px;">
-          <a href="#lead-form">
-            <button class="btn-main btn-call">📞 Meri Booking Karein – Call Back</button>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Main Form -->
-    <section class="section" id="lead-form">
-      <h2 class="section-title">Form bharen – Ham aapko call karenge</h2>
-      <p class="section-sub">
-        Apna number sahi likhein. Aapka data surakshit hai, sirf counseling aur order ke liye use kiya jayega.
-      </p>
-
-      <div class="lead-card">
-        <form id="main-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Pura Naam*</label>
-              <input id="name" name="name" type="text" required>
-            </div>
-            <div class="form-group">
-              <label for="mobile">Mobile Number*</label>
-              <input id="mobile" name="mobile" type="tel"
-                     required minlength="10" maxlength="10"
-                     pattern="[0-9]{10}"
-                     oninput="this.value=this.value.replace(/[^0-9]/g,'')">
-            </div>
-            <div class="form-group">
-              <label for="altmobile">Alternate Number (optional)</label>
-              <input id="altmobile" name="altmobile" type="tel">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="state">Rajya*</label>
-              <input id="state" name="state" type="text" required>
-            </div>
-            <div class="form-group">
-              <label for="city">Shehar / Gaon*</label>
-              <input id="city" name="city" type="text" required>
-            </div>
-            <div class="form-group">
-              <label for="time">Prefer kiya gaya call time</label>
-              <select id="time" name="time">
-                <option value="">Koi bhi</option>
-                <option value="Morning">Subah (9–12)</option>
-                <option value="Afternoon">Dopehar (12–5)</option>
-                <option value="Evening">Shaam (5–9)</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group" style="flex:1 1 100%;">
-              <label>Kis-kis nasha se pareshan?*</label>
-              <div style="font-size:13px;display:flex;flex-wrap:wrap;gap:10px;margin-top:6px;">
-                <label><input type="checkbox" name="addictions" value="Sharab"> Sharab</label>
-                <label><input type="checkbox" name="addictions" value="Cigarette"> Cigarette</label>
-                <label><input type="checkbox" name="addictions" value="Tambaaku / Gutkha"> Tambaaku / Gutkha</label>
-                <label><input type="checkbox" name="addictions" value="Ganja / Powder"> Ganja / Powder</label>
-                <label><input type="checkbox" name="addictions" value="Dusra"> Dusra</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group" style="flex:1 1 100%;">
-              <label for="message">Thoda sa apni problem likhein (optional)</label>
-              <textarea id="message" name="message" rows="3"
-                        placeholder="Kitne saal se nasha, kitni matra, koi bimaari ho to likhein"></textarea>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group" style="flex:1 1 100%;font-size:12px;">
-              <label>
-                <input type="checkbox" id="agree" required>
-                Main yeh maan kar form bhar raha/rahi hoon ki main nasha chhodna chahta/chahti hoon aur phone par salaah lena chahta/chahti hoon.
-              </label>
-            </div>
-          </div>
-
-          <button type="submit" class="btn-main btn-wa lead-submit">✅ Mera Call Back Arrange Karein</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <h2 class="section-title">Aksar puchhe jaane wale sawaal</h2>
-      <div class="faq-item">
-        <strong>1. Kya Addiction Killer allopathy dawa ka replacement hai?</strong>
-        Nahi. Ye ek Ayurvedic support formula hai. Agar aap kisi doctor ki dawa le rahe hain to bina salah ke kabhi band na karein.
-      </div>
-      <div class="faq-item">
-        <strong>2. Kya isse side effect ho sakta hai?</strong>
-        Formula Ayurvedic hai, phir bhi agar aapko koi gambhir bimaari, allergy, pregnancy ya doosri problem hai
-        to apne doctor se salah jaroor karein.
-      </div>
-      <div class="faq-item">
-        <strong>3. Kitne time tak lena hoga?</strong>
-        Ye vyakti ki aadat, umar, health par depend karta hai. Hamari team call par aapko best course duration batayegi.
-      </div>
-      <div class="faq-item">
-        <strong>4. Kya family ke kisi member ke bina order ho sakta hai?</strong>
-        Haan, bahut si maayein, patniyan aur behne apne parivaar ke purushon ke liye form bhar rahi hain.
-        Ham unse pyar aur respect se baat karte hain.
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <section class="section">
-      <div class="footer">
-        <strong>Important Disclaimer:</strong> Addiction Killer ek Ayurvedic support product hai.
-        Yeh kisi bhi roop mein emergency medical treatment ya doctor ki salah ka replacement nahi hai.
-        Result vyakti dar vyakti alag ho sakta hai. Kisi bhi nayi medicine ya supplement shuru karne se pehle
-        apne registered health professional se salah lena hamesha behtar hai.
-        <br><br>
-        © Sat Kartar. All Rights Reserved.
-      </div>
-    </section>
-
+    </div>
   </div>
 
-  <!-- JS: 10-digit validation + dummy submit -->
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left reveal">
+          <h1>Nasha Chhodo, Parivaar Bachao</h1>
+          <p>
+            Jo aadat aapko dheere-dheere khatam karti hai, woh aapke parivaar ko bhi tod deti hai.
+            <b>Addiction Killer</b> ek Ayurvedic support hai – aur aapka sankalp is journey ka asli hero.
+          </p>
+
+          <div class="ticks">
+            <div class="tick">
+              <div class="dot">✓</div>
+              <div><b>Cravings ko control</b><br><span>Roz ki ichha aur chidhchidhapan mein sahayak.</span></div>
+            </div>
+            <div class="tick">
+              <div class="dot">✓</div>
+              <div><b>Body ko support</b><br><span>Pachan & liver support se recovery ka base strong hota hai.</span></div>
+            </div>
+            <div class="tick">
+              <div class="dot">✓</div>
+              <div><b>Parivaar ke liye naya start</b><br><span>Ghar ka mahal, paisa aur sehat—sab par asar.</span></div>
+            </div>
+          </div>
+
+          <div class="hero-ctas">
+            <a class="btn btn-orange" href="tel:9319728256">📞 Abhi Call Karein</a>
+
+            <!-- WhatsApp button removed from here; 2 buttons side-by-side -->
+            <div class="btn-row">
+              <button class="btn btn-green" onclick="openModal()">📝 Mera Call Back Karein</button>
+              <a class="btn btn-ghost" href="#guru">▶ Guru Message Dekhein</a>
+            </div>
+
+            <div style="color:var(--muted); font-size:13px; margin-top:6px;">
+              Sirf 15–20 second mein form bharein — hamari team aapko call karegi.
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right reveal">
+          <div class="card-surface">
+            <div class="hcarousel" id="heroCarousel">
+              <button class="hnav left" type="button" aria-label="Prev" onclick="heroPrev()">‹</button>
+              <button class="hnav right" type="button" aria-label="Next" onclick="heroNext()">›</button>
+
+              <div class="hslides" id="heroSlides">
+                <div class="hslide">
+                  <img src="Images/hero-1.jpg" alt="Awareness drive">
+                  <div class="hgrad"></div>
+                  <div class="hbadge"><span class="p"></span>Awareness & Counselling</div>
+                </div>
+                <div class="hslide">
+                  <img src="Images/hero-2.jpg" alt="Family support">
+                  <div class="hgrad"></div>
+                  <div class="hbadge"><span class="p"></span>Parivaar ka Support</div>
+                </div>
+                <div class="hslide">
+                  <img src="Images/hero-3.jpg" alt="Healthy life">
+                  <div class="hgrad"></div>
+                  <div class="hbadge"><span class="p"></span>Nayi Zindagi ka Sankalp</div>
+                </div>
+              </div>
+            </div>
+            <div class="hdots" id="heroDots"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: Problem (cards + mobile slider) -->
+  <section class="section" id="problem">
+    <div class="container">
+      <h2 class="section-title reveal">Nasha sirf aadmi ko nahi, poore ghar ko dard deta hai</h2>
+      <p class="section-sub reveal">
+        Sharab, cigarette, gutkha, tambaaku — dheere dheere mann, paisa aur sehat teeno ko kha jaate hain.
+        Sabse zyada dard hota hai <b>parivaar ko</b>.
+      </p>
+
+      <div class="pgrid reveal">
+        <div class="pcard">
+          <div class="picon"><img src="Images/icon-cry.png" alt=""></div>
+          <div>
+            <h4>Rona aur tanav</h4>
+            <p>Raat ko der se aana, jhagda, gussa — bachche dara hua mehsoos karte hain.</p>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="picon"><img src="Images/icon-health.png" alt=""></div>
+          <div>
+            <h4>Sehat dheere dheere toot ti hai</h4>
+            <p>Khansi, kamjori, pet ki problem, liver par asar — nasha sharir ka dushman ban jaata hai.</p>
+          </div>
+        </div>
+        <div class="pcard">
+          <div class="picon"><img src="Images/icon-money.png" alt=""></div>
+          <div>
+            <h4>Paisa ka nuksaan</h4>
+            <p>Rozana nasha, mahine ka bada kharcha — parivaar ki padhai aur bhavishya par asar.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile slider -->
+      <div class="pslider reveal" id="pSlider">
+        <div class="ptrack" id="pTrack">
+          <div class="pslide">
+            <div class="pcard">
+              <div class="picon"><img src="Images/icon-cry.png" alt=""></div>
+              <div>
+                <h4>Rona aur tanav</h4>
+                <p>Raat ko der se aana, jhagda, gussa — bachche dara hua mehsoos karte hain.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pslide">
+            <div class="pcard">
+              <div class="picon"><img src="Images/icon-health.png" alt=""></div>
+              <div>
+                <h4>Sehat toot ti hai</h4>
+                <p>Khansi, kamjori, pet/liver par asar — nasha sharir ka dushman.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pslide">
+            <div class="pcard">
+              <div class="picon"><img src="Images/icon-money.png" alt=""></div>
+              <div>
+                <h4>Paisa ka nuksaan</h4>
+                <p>Rozana kharcha — parivaar ki padhai aur future mein lag sakta hai.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pdots" id="pDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY 1 (between 1 & 2) -->
+  <section class="section gallery-wrap" id="gallery-1">
+    <div class="container">
+      <h2 class="section-title reveal">Gallery – Dekhiye badlaav ki tasveer</h2>
+      <p class="section-sub reveal">5–6 images auto-slide hongi. Mobile pe swipe bhi kar sakte hain.</p>
+
+      <div class="gslider reveal" id="gSlider1">
+        <button class="gnav left" type="button" aria-label="Prev">‹</button>
+
+        <div class="gtrack-wrap">
+          <div class="gtrack">
+            <div class="gcard" data-lightbox="Images/g1.jpg"><img src="Images/g1.jpg" alt="Gallery 1"></div>
+            <div class="gcard" data-lightbox="Images/g2.jpg"><img src="Images/g2.jpg" alt="Gallery 2"></div>
+            <div class="gcard" data-lightbox="Images/g3.jpg"><img src="Images/g3.jpg" alt="Gallery 3"></div>
+            <div class="gcard" data-lightbox="Images/g4.jpg"><img src="Images/g4.jpg" alt="Gallery 4"></div>
+            <div class="gcard" data-lightbox="Images/g5.jpg"><img src="Images/g5.jpg" alt="Gallery 5"></div>
+            <div class="gcard" data-lightbox="Images/g6.jpg"><img src="Images/g6.jpg" alt="Gallery 6"></div>
+          </div>
+        </div>
+
+        <button class="gnav right" type="button" aria-label="Next">›</button>
+      </div>
+
+      <div class="gdots" id="gDots1"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Product (1 image only + better look) -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title reveal">Addiction Killer – Ayurveda ka sahayak formula</h2>
+      <p class="section-sub reveal">
+        Ye ek <b>Ayurvedic Proprietary Medicine</b> hai jo nasha chhodne ki prakriya ko aasaan banane mein sahayak ho sakti hai.
+        Kripya ise ek support system ki tarah samjhein — aapka sankalp sabse important hai.
+      </p>
+
+      <!-- We keep 1 product image + 3 benefit cards -->
+      <div class="product-page reveal" style="grid-template-columns:.85fr 1.15fr;">
+        <div class="gallery-card">
+          <img class="main-img" src="Images/BOX-1.jpg" alt="Addiction Killer Product">
+        </div>
+        <div class="pdetails">
+          <div class="pill">✅ 100% Ayurvedic support</div>
+          <h3>Cravings • Mind Calm • Body Support</h3>
+          <p class="desc">Nasha chhodte waqt jo chidhchidhapan, cravings aur weakness hoti hai — unmein support dene ke liye.</p>
+
+          <div class="mini-tags">
+            <div class="mtag">✅ Cravings mein sahayak</div>
+            <div class="mtag">✅ Mann ko shaant rakhe</div>
+            <div class="mtag">✅ Pachan & liver support</div>
+            <div class="mtag">✅ India-wide Delivery</div>
+          </div>
+
+          <div class="hero-ctas" style="margin-top:14px;">
+            <button class="btn btn-orange" onclick="openModal()">📞 Mera Call Back Karein</button>
+            <a class="btn btn-ghost" href="#offer">💰 Offer Dekhein</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Offer/Product Page Style (reference-like) -->
+  <section class="section" id="offer">
+    <div class="container">
+      <h2 class="section-title reveal">Course Details & Special Offer</h2>
+      <p class="section-sub reveal">Offer limited time ke liye valid ho sakta hai. Exact guidance call par milegi.</p>
+
+      <div class="product-page reveal">
+        <!-- Left: product images like product page -->
+        <div class="gallery-card">
+          <img id="mainProductImg" class="main-img" src="Images/product-box.png" alt="Addiction Killer">
+          <div class="thumbs" id="thumbs">
+            <div class="thumb active" data-src="Images/product-box.png"><img src="Images/product-box.png" alt=""></div>
+            <div class="thumb" data-src="Images/product-bottle.png"><img src="Images/product-bottle.png" alt=""></div>
+            <div class="thumb" data-src="Images/slide-1.jpg"><img src="Images/slide-1.jpg" alt=""></div>
+            <div class="thumb" data-src="Images/hero-2.jpg"><img src="Images/hero-2.jpg" alt=""></div>
+          </div>
+        </div>
+
+        <!-- Right: details -->
+        <div class="pdetails">
+          <div style="display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap;">
+            <div style="font-weight:900;">Course: 3 Bottle Pack – 60 gm powder har bottle</div>
+            <div class="pill">COD Available</div>
+          </div>
+
+          <div class="price-row">
+            <div class="cut">₹3359</div>
+            <div class="now">₹2799</div>
+            <div class="save">Save ₹560</div>
+          </div>
+
+          <div class="delivery">🚚 Cash on Delivery | India bhar mein delivery uplabdh</div>
+          <p class="note">*Price aapke shehar / running offer ke hisaab se thoda alag ho sakta hai. Exact price hamari team aapko call par batayegi.</p>
+
+          <div class="qtybar">
+            <div class="qty">
+              <button type="button" onclick="qtyMinus()">-</button>
+              <span id="qtyVal">1</span>
+              <button type="button" onclick="qtyPlus()">+</button>
+            </div>
+            <div style="color:var(--muted); font-weight:800;">Pack qty adjust (optional)</div>
+          </div>
+
+          <div class="pcta">
+            <button class="btn btn-orange" onclick="openModal()">📞 Meri Booking Karein – Call Back</button>
+            <a class="btn btn-green" href="https://wa.me/919319728256?text=Namaste%2C%20Addiction%20Killer%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank" rel="noopener">💬 WhatsApp Par Baat Karein</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Testimonials slider -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <h2 class="section-title reveal">Logon ke anubhav – Parivaar mein phir se muskaan</h2>
+      <p class="section-sub reveal">Har vyakti ka anubhav alag hota hai, lekin kuch kahaniyan aapko umeed de sakti hain.</p>
+
+      <div class="tslider reveal" id="tSlider">
+        <button class="tnav left" type="button" aria-label="Prev">‹</button>
+        <button class="tnav right" type="button" aria-label="Next">›</button>
+
+        <div class="ttrack" id="tTrack">
+          <div class="titem">
+            <div class="timg"><img src="Images/t1.jpg" alt="Ramesh"></div>
+            <div class="tcontent">
+              <h4>“20 saal ka nasha, 3 mahine se bilkul band”</h4>
+              <div class="tmeta"><span class="tname">Ramesh ji</span> • UP</div>
+              <div class="tq">“Main roz sharab peeta tha. Diabetes bhi thi. Doctor ne bola mushkil hoga. Support aur parivaar ke saath 3 mahine se ek boond nahi li.”</div>
+            </div>
+          </div>
+
+          <div class="titem">
+            <div class="timg"><img src="Images/t2.jpg" alt="Sandeep"></div>
+            <div class="tcontent">
+              <h4>“Cigarette se chutkaara, saans mein aaraam”</h4>
+              <div class="tmeta"><span class="tname">Sandeep</span> • Delhi</div>
+              <div class="tq">“Din bhar 1 pack finish. Khansi ruk nahi rahi thi. Course start karne ke 4 hafte baad mann hatne laga.”</div>
+            </div>
+          </div>
+
+          <div class="titem">
+            <div class="timg"><img src="Images/t3.jpg" alt="Neha"></div>
+            <div class="tcontent">
+              <h4>“Ghar ka mahaul badal gaya”</h4>
+              <div class="tmeta"><span class="tname">Neha ji</span> • Rajasthan</div>
+              <div class="tq">“Pati sharab ki wajah se roz jhagda. 2 mahine se nahi li. Bachche bhi khush.”</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tdots" id="tDots"></div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+        <div class="mtag">10,000+ parivaar jud chuke*</div>
+        <div class="mtag">Doctor & Ayurvedic guidance</div>
+        <div class="mtag">Privacy ka dhyan</div>
+      </div>
+      <p class="note" style="margin-top:8px;">*Approximate internal data. Result vyakti ke sharir, aadat aur follow-up par depend karte hain.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY 2 (between 4 & 5) -->
+  <section class="section gallery-wrap" id="gallery-2">
+    <div class="container">
+      <h2 class="section-title reveal">Gallery – Counselling & Parivaar moments</h2>
+      <p class="section-sub reveal">Auto-scroll + swipe enabled. Tap/click to view.</p>
+
+      <div class="gslider reveal" id="gSlider2">
+        <button class="gnav left" type="button" aria-label="Prev">‹</button>
+
+        <div class="gtrack-wrap">
+          <div class="gtrack">
+            <div class="gcard" data-lightbox="Images/g2-1.jpg"><img src="Images/g2-1.jpg" alt=""></div>
+            <div class="gcard" data-lightbox="Images/g2-2.jpg"><img src="Images/g2-2.jpg" alt=""></div>
+            <div class="gcard" data-lightbox="Images/g2-3.jpg"><img src="Images/g2-3.jpg" alt=""></div>
+            <div class="gcard" data-lightbox="Images/g2-4.jpg"><img src="Images/g2-4.jpg" alt=""></div>
+            <div class="gcard" data-lightbox="Images/g2-5.jpg"><img src="Images/g2-5.jpg" alt=""></div>
+            <div class="gcard" data-lightbox="Images/g2-6.jpg"><img src="Images/g2-6.jpg" alt=""></div>
+          </div>
+        </div>
+
+        <button class="gnav right" type="button" aria-label="Next">›</button>
+      </div>
+
+      <div class="gdots" id="gDots2"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Guru Message (YouTube video) -->
+  <section class="section guru" id="guru">
+    <div class="container">
+      <div class="badge reveal">Guru Margdarshan</div>
+      <div class="guru-grid">
+        <div class="reveal">
+          <h2 class="section-title">Sankalp ke bina nasha chhodna mushkil hai</h2>
+          <p>
+            Santon aur guruon ka sandesh saaf hota hai — <b>“Nasha chhodo, dhyaan aur seva mein jeevan lagao.”</b>
+          </p>
+          <p>
+            Aap khud sankalp lein, aur <b>Addiction Killer</b> jaise Ayurvedic sahayak ke saath journey easy bana sakte hain.
+          </p>
+          <p><b>“Main nasha chhodunga / chhodungi – apne parivaar ke liye.”</b></p>
+
+          <button class="btn btn-orange" onclick="openModal()">🙏 Mera Sankalp Register Karein</button>
+        </div>
+
+        <div class="reveal">
+          <div class="video-card" id="videoCard">
+            <!-- Use nocookie embed to avoid config errors -->
+            <iframe
+              id="ytFrame"
+              src="https://www.youtube-nocookie.com/embed/iMJ4CWrdD-g?rel=0&modestbranding=1&playsinline=1"
+              title="Guru message"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+
+            <div class="video-fallback" id="videoFallback">
+              <div>
+                <h3 style="margin:0 0 8px;">Video yahan play nahi ho raha?</h3>
+                <p style="margin:0 0 12px; color:rgba(255,255,255,.85);">
+                  Kabhi-kabhi browser / network restrictions ki wajah se embed block ho jata hai.
+                </p>
+                <a class="btn btn-green" href="https://youtu.be/iMJ4CWrdD-g" target="_blank" rel="noopener">Watch video on YouTube</a>
+              </div>
+            </div>
+          </div>
+          <p class="note" style="margin-top:10px;">Agar player error aaye, to upar wala “Watch video on YouTube” use karein.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- WhatsApp floating icon -->
+  <div class="wa-float">
+    <a class="wa-btn" href="https://wa.me/919319728256?text=Namaste%2C%20Addiction%20Killer%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  </div>
+
+  <!-- Sticky bottom bar (kept) -->
+  <div class="bottom-bar">
+    <div class="container">
+      <div class="bottom-inner">
+        <div class="bb-text">
+          <b>₹2799 Special Offer • COD Available</b>
+          <span>15–20 sec form → team call karegi • Privacy safe</span>
+        </div>
+        <div class="bb-actions">
+          <button class="btn btn-orange btn-small" onclick="openModal()">Call Back Form</button>
+          <a class="btn btn-green btn-small" href="tel:9319728256">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Modal Form -->
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <div class="m-left">
+        <div class="mlabel">Sankalp Form</div>
+        <img src="Images/form-side.jpg" alt="Family support">
+      </div>
+      <div class="m-right">
+        <div class="mhead">
+          <h3>Call Back Request (15–20 sec)</h3>
+          <button class="close" onclick="closeModal()">✕</button>
+        </div>
+        <p>Apna number aur basic info bharein. Hamari team aapko call karegi.</p>
+
+        <form class="form" onsubmit="submitLead(event)">
+          <div class="field">
+            <label>Naam</label>
+            <input type="text" id="name" placeholder="Jaise: Ramesh" required>
+          </div>
+
+          <div class="field">
+            <label>Mobile Number (10 digit)</label>
+            <input
+              type="tel"
+              id="phone"
+              inputmode="numeric"
+              pattern="^[0-9]{10}$"
+              minlength="10"
+              maxlength="10"
+              placeholder="Jaise: 9319728256"
+              required
+            >
+            <div class="hint">Sirf 10 digit number (na kam, na zyada)</div>
+            <div class="error" id="phoneErr">Please valid 10 digit mobile number daalein.</div>
+          </div>
+
+          <div class="field">
+            <label>Addiction Type</label>
+            <select id="type" required>
+              <option value="">Select</option>
+              <option>Alcohol</option>
+              <option>Cigarette / Tobacco</option>
+              <option>Gutkha / Pan masala</option>
+              <option>Multiple</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>City</label>
+            <input type="text" id="city" placeholder="Jaise: Delhi">
+          </div>
+
+          <div class="field">
+            <label>Message (optional)</label>
+            <textarea id="msg" rows="3" placeholder="Aap kya support chahte hain?"></textarea>
+          </div>
+
+          <div class="m-actions">
+            <button class="btn btn-orange" type="submit">Submit Request</button>
+            <a class="btn btn-green" href="https://wa.me/919319728256?text=Namaste%2C%20mujhe%20Addiction%20Killer%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank" rel="noopener">WhatsApp</a>
+            <button class="btn btn-ghost" type="button" onclick="closeModal()">Cancel</button>
+          </div>
+
+          <p class="note" style="margin:0;">*We respect privacy. Call guidance available.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Preview">
+  </div>
+
   <script>
-    function validateMobileById(id) {
-      const el = document.getElementById(id);
-      if (!el) return true;
-      const v = (el.value || "").trim();
-      if (!/^[0-9]{10}$/.test(v)) {
-        alert("Kripya sahi 10 digit mobile number daalein.");
-        return false;
+    /* =========================
+      HERO CAROUSEL
+    ========================== */
+    let heroIndex = 0;
+    const heroSlides = document.getElementById('heroSlides');
+    const heroTotal = heroSlides ? heroSlides.children.length : 0;
+    const heroDots = document.getElementById('heroDots');
+    let heroTimer = null;
+
+    function renderHeroDots(){
+      if(!heroDots) return;
+      heroDots.innerHTML = '';
+      for(let i=0;i<heroTotal;i++){
+        const b = document.createElement('button');
+        b.className = 'hdot' + (i===heroIndex ? ' active':'');
+        b.type = 'button';
+        b.addEventListener('click', ()=>{ heroGo(i,true); });
+        heroDots.appendChild(b);
       }
-      return true;
+    }
+    function heroGo(i, user=false){
+      if(!heroSlides) return;
+      heroIndex = (i + heroTotal) % heroTotal;
+      heroSlides.style.transform = `translateX(-${heroIndex*100}%)`;
+      renderHeroDots();
+      if(user) heroRestart();
+    }
+    function heroPrev(){ heroGo(heroIndex-1,true); }
+    function heroNext(){ heroGo(heroIndex+1,true); }
+    function heroRestart(){
+      if(heroTimer) clearInterval(heroTimer);
+      heroTimer = setInterval(()=>heroGo(heroIndex+1,false), 3000);
+    }
+    renderHeroDots();
+    heroGo(0);
+    heroRestart();
+
+    /* =========================
+      PRODUCT THUMB SWITCH
+    ========================== */
+    const mainProductImg = document.getElementById('mainProductImg');
+    const thumbs = document.querySelectorAll('#thumbs .thumb');
+    thumbs.forEach(t=>{
+      t.addEventListener('click', ()=>{
+        thumbs.forEach(x=>x.classList.remove('active'));
+        t.classList.add('active');
+        const src = t.getAttribute('data-src');
+        if(mainProductImg && src) mainProductImg.src = src;
+      })
+    })
+
+    /* =========================
+      QTY CONTROL (optional)
+    ========================== */
+    let qty = 1;
+    const qtyVal = document.getElementById('qtyVal');
+    function qtyPlus(){ qty++; if(qtyVal) qtyVal.textContent = qty; }
+    function qtyMinus(){ qty = Math.max(1, qty-1); if(qtyVal) qtyVal.textContent = qty; }
+
+    /* =========================
+      PROBLEM MOBILE SLIDER
+    ========================== */
+    (function(){
+      const track = document.getElementById('pTrack');
+      const dotsWrap = document.getElementById('pDots');
+      if(!track || !dotsWrap) return;
+      const total = track.children.length;
+      let idx = 0;
+
+      function render(){
+        track.style.transform = `translateX(-${idx*100}%)`;
+        dotsWrap.innerHTML='';
+        for(let i=0;i<total;i++){
+          const d=document.createElement('button');
+          d.className='pdot'+(i===idx?' active':'');
+          d.type='button';
+          d.addEventListener('click', ()=>{ idx=i; render(); });
+          dotsWrap.appendChild(d);
+        }
+      }
+      render();
+
+      let t=null;
+      function start(){
+        if(t) clearInterval(t);
+        t=setInterval(()=>{ idx=(idx+1)%total; render(); }, 3000);
+      }
+      start();
+
+      // swipe
+      let sx=0, drag=false;
+      track.parentElement.addEventListener('touchstart', (e)=>{ drag=true; sx=e.touches[0].clientX; clearInterval(t); }, {passive:true});
+      track.parentElement.addEventListener('touchend', (e)=>{
+        if(!drag) return; drag=false;
+        const ex=e.changedTouches[0].clientX;
+        const diff=ex-sx;
+        if(Math.abs(diff)>40){
+          if(diff<0) idx=(idx+1)%total;
+          else idx=(idx-1+total)%total;
+          render();
+        }
+        start();
+      }, {passive:true});
+    })();
+
+    /* =========================
+      GALLERY AUTO SLIDERS (1 & 2)
+    ========================== */
+    function initGallerySlider(rootId, dotsId){
+      const root = document.getElementById(rootId);
+      const dotsWrap = document.getElementById(dotsId);
+      if(!root) return;
+
+      const track = root.querySelector('.gtrack');
+      const cards = Array.from(root.querySelectorAll('.gcard'));
+      const prev = root.querySelector('.gnav.left');
+      const next = root.querySelector('.gnav.right');
+
+      let idx=0, timer=null;
+
+      function cardsPerView(){
+        const w=window.innerWidth;
+        if(w<=520) return 1;
+        if(w<=980) return 2;
+        return 3;
+      }
+      function maxIndex(){
+        return Math.max(0, cards.length - cardsPerView());
+      }
+      function stepPx(){
+        if(cards.length<2) return cards[0].getBoundingClientRect().width;
+        const r0=cards[0].getBoundingClientRect();
+        const r1=cards[1].getBoundingClientRect();
+        return Math.round(r1.left-r0.left);
+      }
+      function renderDots(){
+        if(!dotsWrap) return;
+        dotsWrap.innerHTML='';
+        const total=maxIndex()+1;
+        for(let i=0;i<total;i++){
+          const d=document.createElement('button');
+          d.type='button';
+          d.className='gdot'+(i===idx?' active':'');
+          d.addEventListener('click', ()=>go(i,true));
+          dotsWrap.appendChild(d);
+        }
+      }
+      function apply(){
+        const x=idx*stepPx();
+        track.style.transform = `translateX(-${x}px)`;
+        renderDots();
+      }
+      function go(i,user=false){
+        const m=maxIndex();
+        idx = (i>m)?0:(i<0?m:i);
+        apply();
+        if(user) restart();
+      }
+      function restart(){
+        if(timer) clearInterval(timer);
+        timer=setInterval(()=>go(idx+1,false), 2800);
+      }
+
+      prev && prev.addEventListener('click', ()=>go(idx-1,true));
+      next && next.addEventListener('click', ()=>go(idx+1,true));
+
+      root.addEventListener('mouseenter', ()=>timer && clearInterval(timer));
+      root.addEventListener('mouseleave', ()=>restart());
+
+      window.addEventListener('resize', ()=>{
+        idx=Math.min(idx,maxIndex());
+        apply();
+      });
+
+      // touch swipe
+      let sx=0, drag=false;
+      root.addEventListener('touchstart', (e)=>{ drag=true; sx=e.touches[0].clientX; timer && clearInterval(timer); }, {passive:true});
+      root.addEventListener('touchend', (e)=>{
+        if(!drag) return; drag=false;
+        const ex=e.changedTouches[0].clientX;
+        const diff=ex-sx;
+        if(Math.abs(diff)>40){
+          if(diff<0) go(idx+1,true);
+          else go(idx-1,true);
+        } else restart();
+      }, {passive:true});
+
+      renderDots(); apply(); restart();
+    }
+    initGallerySlider('gSlider1','gDots1');
+    initGallerySlider('gSlider2','gDots2');
+
+    /* =========================
+      TESTIMONIAL SLIDER
+    ========================== */
+    (function(){
+      const slider = document.getElementById('tSlider');
+      const track = document.getElementById('tTrack');
+      const dots = document.getElementById('tDots');
+      if(!slider || !track || !dots) return;
+
+      const items = track.children.length;
+      let idx=0, timer=null;
+
+      function render(){
+        track.style.transform = `translateX(-${idx*100}%)`;
+        dots.innerHTML='';
+        for(let i=0;i<items;i++){
+          const d=document.createElement('button');
+          d.type='button';
+          d.className='tdot'+(i===idx?' active':'');
+          d.addEventListener('click', ()=>{ idx=i; render(); restart(); });
+          dots.appendChild(d);
+        }
+      }
+
+      function go(n, user=false){
+        idx=(n+items)%items;
+        render();
+        if(user) restart();
+      }
+      function restart(){
+        if(timer) clearInterval(timer);
+        timer=setInterval(()=>go(idx+1,false), 3400);
+      }
+
+      slider.querySelector('.tnav.left').addEventListener('click', ()=>go(idx-1,true));
+      slider.querySelector('.tnav.right').addEventListener('click', ()=>go(idx+1,true));
+      slider.addEventListener('mouseenter', ()=>timer && clearInterval(timer));
+      slider.addEventListener('mouseleave', ()=>restart());
+
+      // swipe
+      let sx=0, drag=false;
+      slider.addEventListener('touchstart', (e)=>{ drag=true; sx=e.touches[0].clientX; timer && clearInterval(timer); }, {passive:true});
+      slider.addEventListener('touchend', (e)=>{
+        if(!drag) return; drag=false;
+        const ex=e.changedTouches[0].clientX;
+        const diff=ex-sx;
+        if(Math.abs(diff)>40){
+          if(diff<0) go(idx+1,true);
+          else go(idx-1,true);
+        } else restart();
+      }, {passive:true});
+
+      render(); restart();
+    })();
+
+    /* =========================
+      MODAL + PHONE VALIDATION (10 digits only)
+    ========================== */
+    const modal = document.getElementById('modal');
+    const phone = document.getElementById('phone');
+    const phoneErr = document.getElementById('phoneErr');
+
+    function openModal(){
+      modal.classList.add('open');
+      document.body.style.overflow='hidden';
+      setTimeout(()=>{ document.getElementById('name')?.focus(); }, 50);
+    }
+    function closeModal(){
+      modal.classList.remove('open');
+      document.body.style.overflow='';
+      if(phoneErr) phoneErr.classList.remove('show');
+    }
+    modal.addEventListener('click', (e)=>{
+      if(e.target === modal) closeModal();
+    });
+
+    // hard restrict: only digits, max 10
+    phone && phone.addEventListener('input', ()=>{
+      phone.value = (phone.value || '').replace(/\D/g,'').slice(0,10);
+      if(phoneErr) phoneErr.classList.remove('show');
+    });
+
+    function isValidPhone(v){
+      return /^[0-9]{10}$/.test(v || '');
     }
 
-    document.getElementById('mini-form').addEventListener('submit', function(e) {
-      if (!validateMobileById('mini-mobile')) { e.preventDefault(); return; }
+    function submitLead(e){
       e.preventDefault();
-      alert('Dhanyavaad! Hamari team aapko jald hi call karegi.');
-    });
 
-    document.getElementById('main-form').addEventListener('submit', function(e) {
-      if (!validateMobileById('mobile')) { e.preventDefault(); return; }
-      e.preventDefault();
-      alert('Dhanyavaad! Aapka form submit ho gaya. Ham jaldi hi aapko call karenge.');
-    });
-  </script>
+      const v = phone.value.trim();
+      if(!isValidPhone(v)){
+        phoneErr.classList.add('show');
+        phone.focus();
+        return;
+      }
 
-  <!-- Floating WhatsApp button bottom-right -->
-  <a href="https://wa.me/917428382862?text=Namaste,%20mujhe%20nasha%20mukti%20ke%20baare%20mein%20baat%20karni%20hai."
-     class="floating-wa"
-     aria-label="WhatsApp par baat karein"
-     target="_blank"
-     rel="noopener">💬</a>
+      // Demo: just show alert. Replace with your API/WhatsApp send later.
+      const payload = {
+        name: document.getElementById('name').value.trim(),
+        phone: v,
+        type: document.getElementById('type').value,
+        city: document.getElementById('city').value.trim(),
+        msg: document.getElementById('msg').value.trim()
+      };
 
-  <!-- Sticky bottom bar (mobile only) -->
-  <div class="sticky-bottom">
-    <a href="tel:+917428382862"><button class="btn-main btn-call">📞 Call Karein</button></a>
-    <a href="#lead-form"><button class="btn-main btn-wa">📋 Form Bharen</button></a>
-  </div>
-  <script>
-  // Reveal on scroll using IntersectionObserver
-  (function(){
-    const els = document.querySelectorAll('.section, .card, .problem-card, .testi-card, .benefit-card, .price-box, .lead-card, .product-visual, .product-info');
-    els.forEach((el, i) => {
-      el.classList.add('reveal');
-      // small stagger
-      el.style.transitionDelay = Math.min(i * 0.03, 0.25) + 's';
-    });
+      alert("✅ Request submitted!\n\nName: "+payload.name+"\nPhone: "+payload.phone+"\nType: "+payload.type+"\nCity: "+payload.city);
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
+      closeModal();
+    }
+
+    /* =========================
+      LIGHTBOX (gallery click)
+    ========================== */
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    document.querySelectorAll('[data-lightbox]').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        const src = el.getAttribute('data-lightbox');
+        lbImg.src = src;
+        lb.classList.add('open');
       });
-    }, { threshold: 0.12 });
+    });
+    function closeLightbox(){
+      lb.classList.remove('open');
+      lbImg.src = '';
+    }
 
-    els.forEach(el => io.observe(el));
-  })();
-</script>
+    /* =========================
+      VIDEO FALLBACK IF EMBED BLOCKED
+    ========================== */
+    // If iframe fails to load, show fallback overlay
+    const yt = document.getElementById('ytFrame');
+    const fallback = document.getElementById('videoFallback');
+    let ytLoaded = false;
+    if(yt){
+      yt.addEventListener('load', ()=>{ ytLoaded = true; });
+      setTimeout(()=>{
+        if(!ytLoaded && fallback){
+          fallback.style.display='flex';
+        }
+      }, 2500);
+    }
 
+    /* =========================
+      SCROLL REVEAL
+    ========================== */
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){
+          en.target.classList.add('show');
+          io.unobserve(en.target);
+        }
+      })
+    }, {threshold: .12});
+    els.forEach(el=>io.observe(el));
+  </script>
 </body>
 </html>
-
